@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  school: 
+  starting_year: MyString
+  ending_year: MyString
+  title: MyString
+  theme: MyString
+
+two:
+  school: 
+  starting_year: MyString
+  ending_year: MyString
+  title: MyString
+  theme: MyString

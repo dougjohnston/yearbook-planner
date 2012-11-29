@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>School:</b>
+  <%= @yearbook.school %>
+</p>
+
+<p>
+  <b>Starting year:</b>
+  <%= @yearbook.starting_year %>
+</p>
+
+<p>
+  <b>Ending year:</b>
+  <%= @yearbook.ending_year %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @yearbook.title %>
+</p>
+
+<p>
+  <b>Theme:</b>
+  <%= @yearbook.theme %>
+</p>
+
+
+<%= link_to 'Edit', edit_yearbook_path(@yearbook) %> |
+<%= link_to 'Back', yearbooks_path %>

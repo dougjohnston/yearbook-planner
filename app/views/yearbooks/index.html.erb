@@ -1,0 +1,31 @@
+<h1>Listing yearbooks</h1>
+
+<table>
+  <tr>
+    <th>School</th>
+    <th>Starting year</th>
+    <th>Ending year</th>
+    <th>Title</th>
+    <th>Theme</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @yearbooks.each do |yearbook| %>
+  <tr>
+    <td><%= yearbook.school %></td>
+    <td><%= yearbook.starting_year %></td>
+    <td><%= yearbook.ending_year %></td>
+    <td><%= yearbook.title %></td>
+    <td><%= yearbook.theme %></td>
+    <td><%= link_to 'Show', yearbook %></td>
+    <td><%= link_to 'Edit', edit_yearbook_path(yearbook) %></td>
+    <td><%= link_to 'Destroy', yearbook, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Yearbook', new_yearbook_path %>

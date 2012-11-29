@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  yearbook: 
+  title: MyString
+  pages: MyString
+  position: MyString
+
+two:
+  yearbook: 
+  title: MyString
+  pages: MyString
+  position: MyString

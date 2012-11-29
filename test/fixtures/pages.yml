@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  spread: 
+  title: MyString
+  left: MyString
+  page_number: MyString
+
+two:
+  spread: 
+  title: MyString
+  left: MyString
+  page_number: MyString
