@@ -2,6 +2,7 @@ require 'test_helper'
 
 class YearbooksControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @yearbook = yearbooks(:one)
   end
 

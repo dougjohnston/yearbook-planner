@@ -2,6 +2,7 @@ require 'test_helper'
 
 class SpreadsControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @spread = spreads(:one)
   end
 

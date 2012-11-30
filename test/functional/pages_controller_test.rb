@@ -2,6 +2,7 @@ require 'test_helper'
 
 class PagesControllerTest < ActionController::TestCase
   setup do
+    sign_in users(:one)
     @page = pages(:one)
   end
 

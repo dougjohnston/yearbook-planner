@@ -1,20 +1,11 @@
 YearbookPlanner::Application.routes.draw do
-  resources :pages
-
-
-  resources :spreads
-
-
-  resources :sections
-
-
-  resources :yearbooks
-
-
-  resources :schools
-
-
   devise_for :users
+
+  resources :pages
+  resources :schools
+  resources :sections
+  resources :spreads
+  resources :yearbooks
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
@@ -65,7 +56,7 @@ YearbookPlanner::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'public#index'
+  root :to => 'dashboard#index'
 
   # See how all your routes lay out with "rake routes"
 
