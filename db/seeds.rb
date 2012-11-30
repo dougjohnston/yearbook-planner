@@ -1,7 +1,7 @@
 # Create some basic data during development
 
 # Create some users
-User.create(email: "dbjohnston@gmail.com", password: "eoselan", password_confirmation: "eoselan")
+User.create(email: "dbjohnston@gmail.com", password: "eoselan", password_confirmation: "eoselan", confirmed_at: Time.now)
 
 # Create a school
 School.create(name: "Alliance Academy International")

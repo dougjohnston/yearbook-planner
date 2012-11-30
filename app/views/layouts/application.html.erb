@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>YearbookPlanner</title>
+  <title>AAI <%= content_for?(:title) ? content_for(:title) : "Yearbook Planner" %> - yearbookplanner.com</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
@@ -10,7 +10,7 @@
   <p class="notice"><%= notice %></p>
   <p class="alert"><%= alert %></p>
 
+  <h1><%= content_for :title %></h1>
   <%= yield %>
-
 </body>
 </html>
