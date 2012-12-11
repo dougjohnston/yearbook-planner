@@ -11,7 +11,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121126234345) do
+ActiveRecord::Schema.define(:version => 20121211201513) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "assignment_id"
+    t.string   "assignment_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
 
   create_table "pages", :force => true do |t|
     t.integer  "spread_id"

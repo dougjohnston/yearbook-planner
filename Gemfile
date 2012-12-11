@@ -10,8 +10,11 @@ gem 'strong_parameters'
 # Authentication
 gem 'devise'
 
-# Lists
+# Models
 gem 'ranked-model'
+
+# Views
+gem 'jquery-rails'
 
 # Asset gems
 group :assets do
@@ -21,7 +24,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
-gem 'jquery-rails'
+group :test do
+  gem 'turn'
+end
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'
