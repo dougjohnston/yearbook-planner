@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class SpreadsControllerTest < ActionController::TestCase
+class SpreadsControllerTest < MiniTest::Rails::ActionController::TestCase
   setup do
     sign_in users(:one)
     @spread = spreads(:one)

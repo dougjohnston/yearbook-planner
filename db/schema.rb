@@ -11,14 +11,21 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121211201513) do
+ActiveRecord::Schema.define(:version => 20121213233216) do
 
-  create_table "assignments", :force => true do |t|
-    t.integer  "user_id"
-    t.integer  "assignment_id"
-    t.string   "assignment_type"
-    t.datetime "created_at",      :null => false
-    t.datetime "updated_at",      :null => false
+  create_table "events", :force => true do |t|
+    t.integer  "yearbook_id"
+    t.string   "title"
+    t.text     "details"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "events_users", :force => true do |t|
+    t.integer "event_id"
+    t.integer "user_id"
   end
 
   create_table "pages", :force => true do |t|
@@ -28,6 +35,11 @@ ActiveRecord::Schema.define(:version => 20121211201513) do
     t.integer  "page_number"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "pages_users", :force => true do |t|
+    t.integer "page_id"
+    t.integer "user_id"
   end
 
   create_table "schools", :force => true do |t|
@@ -50,6 +62,11 @@ ActiveRecord::Schema.define(:version => 20121211201513) do
 
   add_index "sections", ["yearbook_id"], :name => "index_sections_on_yearbook_id"
 
+  create_table "sections_users", :force => true do |t|
+    t.integer "section_id"
+    t.integer "user_id"
+  end
+
   create_table "spreads", :force => true do |t|
     t.integer  "section_id"
     t.integer  "position"
@@ -58,6 +75,11 @@ ActiveRecord::Schema.define(:version => 20121211201513) do
   end
 
   add_index "spreads", ["section_id"], :name => "index_spreads_on_section_id"
+
+  create_table "spreads_users", :force => true do |t|
+    t.integer "spread_id"
+    t.integer "user_id"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
@@ -86,6 +108,11 @@ ActiveRecord::Schema.define(:version => 20121211201513) do
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
   add_index "users", ["reset_password_token"], :name => "index_users_on_reset_password_token", :unique => true
   add_index "users", ["unlock_token"], :name => "index_users_on_unlock_token", :unique => true
+
+  create_table "users_yearbooks", :force => true do |t|
+    t.integer "user_id"
+    t.integer "yearbook_id"
+  end
 
   create_table "yearbooks", :force => true do |t|
     t.integer  "school_id"

@@ -1,10 +1,10 @@
-require 'test_helper'
+require 'minitest_helper'
 
 class MockView < ActionView::Base
   include ApplicationHelper
 end
 
-class ApplicationHelperTest < ActionView::TestCase
+class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
   setup do
     @template = MockView.new
   end

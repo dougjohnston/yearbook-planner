@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class YearbooksHelperTest < ActionView::TestCase
+class YearbooksHelperTest < MiniTest::Rails::ActionView::TestCase
 end

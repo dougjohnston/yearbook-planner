@@ -8,6 +8,12 @@ class CreateSections < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    create_table :sections_users do |t|
+      t.references :section
+      t.references :user
+    end
+
     add_index :sections, :yearbook_id
   end
 end

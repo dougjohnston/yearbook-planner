@@ -25,7 +25,16 @@ group :assets do
 end
 
 group :test do
+  gem 'minitest-rails'
   gem 'turn'
+
+  # Autotest & Spork
+  gem 'spork'
+  gem 'autotest-standalone' # The file '.autotest' makes sure the tests are run via test server (spork).
+  gem 'autotest-rails-pure' # -pure gives us autotest without ZenTest gem.
+  gem 'autotest-growl'      # growl notifications, complains a little bit if growl isn't installed
+  gem 'autotest-fsevent'
+  gem 'spork-minitest'
 end
 
 # To use Jbuilder templates for JSON

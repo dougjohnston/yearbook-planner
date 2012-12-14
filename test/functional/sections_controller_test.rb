@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class SectionsControllerTest < ActionController::TestCase
+class SectionsControllerTest < MiniTest::Rails::ActionController::TestCase
   setup do
     sign_in users(:one)
     @section = sections(:one)

@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class PageTest < ActiveSupport::TestCase
+class PageTest < MiniTest::Rails::ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

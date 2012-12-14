@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class PagesControllerTest < ActionController::TestCase
+class PagesControllerTest < MiniTest::Rails::ActionController::TestCase
   setup do
     sign_in users(:one)
     @page = pages(:one)

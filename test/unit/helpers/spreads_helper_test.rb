@@ -1,4 +1,4 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class SpreadsHelperTest < ActionView::TestCase
+class SpreadsHelperTest < MiniTest::Rails::ActionView::TestCase
 end

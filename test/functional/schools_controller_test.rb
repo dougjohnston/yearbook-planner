@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class SchoolsControllerTest < ActionController::TestCase
+class SchoolsControllerTest < MiniTest::Rails::ActionController::TestCase
   setup do
     sign_in users(:one)
     @school = schools(:one)

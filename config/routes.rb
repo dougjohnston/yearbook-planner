@@ -1,5 +1,5 @@
 YearbookPlanner::Application.routes.draw do
-  resources :assignments
+  resources :events
 
 
   devise_for :users

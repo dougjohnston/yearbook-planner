@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class DashboardControllerTest < ActionController::TestCase
+class DashboardControllerTest < MiniTest::Rails::ActionController::TestCase
   test "should redirect anonymous visitor" do
     get :index
     assert_response :redirect

@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class SectionTest < ActiveSupport::TestCase
+class SectionTest < MiniTest::Rails::ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

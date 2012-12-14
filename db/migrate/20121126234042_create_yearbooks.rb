@@ -9,5 +9,10 @@ class CreateYearbooks < ActiveRecord::Migration
 
       t.timestamps
     end
+
+    create_table :users_yearbooks do |t|
+      t.references :user
+      t.references :yearbook
+    end
   end
 end

@@ -1,6 +1,6 @@
-require 'test_helper'
+require 'minitest_helper'
 
-class YearbooksControllerTest < ActionController::TestCase
+class YearbooksControllerTest < MiniTest::Rails::ActionController::TestCase
   setup do
     sign_in users(:one)
     @yearbook = yearbooks(:one)
