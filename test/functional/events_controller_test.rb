@@ -19,7 +19,7 @@ class EventsControllerTest < MiniTest::Rails::ActionController::TestCase
 
   test "should create event" do
     assert_difference('Event.count') do
-      post :create, event: {  }
+      post :create, event: { title: @event.title }
     end
 
     assert_redirected_to event_path(assigns(:event))
@@ -36,7 +36,7 @@ class EventsControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   test "should update event" do
-    put :update, id: @event, event: {  }
+    put :update, id: @event, event: { title: @event.title }
     assert_redirected_to event_path(assigns(:event))
   end
 
