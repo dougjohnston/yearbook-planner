@@ -9,9 +9,9 @@ class CreatePages < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :pages_users do |t|
-      t.references :page
-      t.references :user
-    end
+    #create_table :pages_users do |t|
+      #t.references :page
+      #t.references :user
+    #end
   end
 end

@@ -8,5 +8,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_and_belongs_to_many :yearbooks
-  has_and_belongs_to_many :spreads
+  #has_and_belongs_to_many :spreads
+  has_many :assignments
+  has_many :spreads, :through => :assignments, :source => :assignable, :source_type => 'Spread'
 end

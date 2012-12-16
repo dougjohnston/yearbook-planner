@@ -11,7 +11,19 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121213233216) do
+ActiveRecord::Schema.define(:version => 20121215235119) do
+
+  create_table "assignments", :force => true do |t|
+    t.integer  "user_id"
+    t.integer  "yearbook_id"
+    t.integer  "assignable_id"
+    t.string   "assignable_type"
+    t.datetime "created_at",      :null => false
+    t.datetime "updated_at",      :null => false
+  end
+
+  add_index "assignments", ["user_id"], :name => "index_assignments_on_user_id"
+  add_index "assignments", ["yearbook_id"], :name => "index_assignments_on_yearbook_id"
 
   create_table "events", :force => true do |t|
     t.integer  "yearbook_id"
@@ -23,11 +35,6 @@ ActiveRecord::Schema.define(:version => 20121213233216) do
     t.datetime "updated_at",  :null => false
   end
 
-  create_table "events_users", :force => true do |t|
-    t.integer "event_id"
-    t.integer "user_id"
-  end
-
   create_table "pages", :force => true do |t|
     t.integer  "spread_id"
     t.string   "title"
@@ -35,11 +42,6 @@ ActiveRecord::Schema.define(:version => 20121213233216) do
     t.integer  "page_number"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
-  end
-
-  create_table "pages_users", :force => true do |t|
-    t.integer "page_id"
-    t.integer "user_id"
   end
 
   create_table "schools", :force => true do |t|
@@ -75,11 +77,6 @@ ActiveRecord::Schema.define(:version => 20121213233216) do
   end
 
   add_index "spreads", ["section_id"], :name => "index_spreads_on_section_id"
-
-  create_table "spreads_users", :force => true do |t|
-    t.integer "spread_id"
-    t.integer "user_id"
-  end
 
   create_table "users", :force => true do |t|
     t.string   "first_name"

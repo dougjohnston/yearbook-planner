@@ -10,9 +10,9 @@ class CreateEvents < ActiveRecord::Migration
       t.timestamps
     end
 
-    create_table :events_users do |t|
-      t.references :event
-      t.references :user
-    end
+    #create_table :events_users do |t|
+      #t.references :event
+      #t.references :user
+    #end
   end
 end
