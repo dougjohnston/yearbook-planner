@@ -5,6 +5,10 @@ class CreateAssignments < ActiveRecord::Migration
       t.references :yearbook
       t.integer :assignable_id
       t.string :assignable_type
+      t.boolean :completed
+      t.datetime :completed_at
+      t.integer :approved_by
+      t.datetime :approved_at
 
       t.timestamps
     end

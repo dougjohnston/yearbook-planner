@@ -1,7 +1,7 @@
 class Spread < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
 
-  #has_and_belongs_to_many :users
+  # Polymorphic association linking users through assignments
   has_many :assignments, :as => :assignable
   has_many :users, :through => :assignments
 
