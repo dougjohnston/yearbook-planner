@@ -1,0 +1,29 @@
+<h1>Listing deadlines</h1>
+
+<table>
+  <tr>
+    <th>Yearbook</th>
+    <th>Title</th>
+    <th>Description</th>
+    <th>Due date</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @deadlines.each do |deadline| %>
+  <tr>
+    <td><%= deadline.yearbook %></td>
+    <td><%= deadline.title %></td>
+    <td><%= deadline.description %></td>
+    <td><%= deadline.due_date %></td>
+    <td><%= link_to 'Show', deadline %></td>
+    <td><%= link_to 'Edit', edit_deadline_path(deadline) %></td>
+    <td><%= link_to 'Destroy', deadline, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Deadline', new_deadline_path %>

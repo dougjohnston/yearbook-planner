@@ -1,4 +1,7 @@
 YearbookPlanner::Application.routes.draw do
+  resources :deadlines
+
+
   resources :events
 
 

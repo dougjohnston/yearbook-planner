@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Yearbook:</b>
+  <%= @deadline.yearbook %>
+</p>
+
+<p>
+  <b>Title:</b>
+  <%= @deadline.title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @deadline.description %>
+</p>
+
+<p>
+  <b>Due date:</b>
+  <%= @deadline.due_date %>
+</p>
+
+
+<%= link_to 'Edit', edit_deadline_path(@deadline) %> |
+<%= link_to 'Back', deadlines_path %>

@@ -7,8 +7,9 @@ gem 'mysql2'
 # Not needed after an upgrade to Rails 4.x
 gem 'strong_parameters'
 
-# Authentication
+# Authentication & Authorization
 gem 'devise'
+#gem 'cancan'
 
 # Models
 gem 'ranked-model'
