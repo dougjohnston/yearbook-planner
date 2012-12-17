@@ -1,10 +1,4 @@
 YearbookPlanner::Application.routes.draw do
-  resources :deadlines
-
-
-  resources :events
-
-
   devise_for :users
 
   resources :pages
@@ -12,6 +6,10 @@ YearbookPlanner::Application.routes.draw do
   resources :sections
   resources :spreads
   resources :yearbooks
+  resources :deadlines
+  resources :events
+
+  match '/' => 'dashboard#index', :contraints => { :subdomain => /.*/ }
 
   root :to => 'dashboard#index'
 

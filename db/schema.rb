@@ -61,6 +61,8 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
 
   create_table "schools", :force => true do |t|
     t.string   "name"
+    t.string   "short_name"
+    t.string   "subdomain"
     t.string   "city"
     t.string   "state_province"
     t.string   "country"
@@ -94,6 +96,7 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
   add_index "spreads", ["section_id"], :name => "index_spreads_on_section_id"
 
   create_table "users", :force => true do |t|
+    t.integer  "school_id"
     t.string   "first_name"
     t.string   "last_name"
     t.string   "email",                  :default => "", :null => false

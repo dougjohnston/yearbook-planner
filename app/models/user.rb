@@ -4,6 +4,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
 
+  belongs_to :school
   has_and_belongs_to_many :yearbooks
 
   # Polymorphic association linking users through assignments
