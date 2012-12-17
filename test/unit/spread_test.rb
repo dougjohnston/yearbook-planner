@@ -6,7 +6,6 @@ class SpreadTest < MiniTest::Rails::ActiveSupport::TestCase
   end
 
   test "can be assigned to a user" do
-    puts @spread.to_s
     user = users(:one)
     assert_difference '@spread.users.count' do
       @spread.users << user

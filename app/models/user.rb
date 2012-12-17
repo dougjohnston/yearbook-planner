@@ -8,5 +8,8 @@ class User < ActiveRecord::Base
 
   # Polymorphic association linking users through assignments
   has_many :assignments
+  has_many :sections, :through => :assignments, :source => :assignable, :source_type => 'Section'
   has_many :spreads, :through => :assignments, :source => :assignable, :source_type => 'Spread'
+  has_many :pages, :through => :assignments, :source => :assignable, :source_type => 'Page'
+  has_many :events, :through => :assignments, :source => :assignable, :source_type => 'Event'
 end
