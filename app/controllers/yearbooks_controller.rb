@@ -1,4 +1,6 @@
 class YearbooksController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /yearbooks
   # GET /yearbooks.json
   def index

@@ -1,3 +1,5 @@
+require 'subdomain'
+
 YearbookPlanner::Application.routes.draw do
   devise_for :users
 
@@ -9,9 +11,11 @@ YearbookPlanner::Application.routes.draw do
   resources :deadlines
   resources :events
 
-  match '/' => 'dashboard#index', :contraints => { :subdomain => /.*/ }
+  constraints(Subdomain) do
+    match '/' => 'dashboard#index'
+  end
 
-  root :to => 'dashboard#index'
+  root :to => 'public#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

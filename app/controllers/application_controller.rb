@@ -3,8 +3,6 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  # Run everything through Devise; there is no public area.
-  before_filter :authenticate_user!
   before_filter :find_school_by_subdomain
 
   protected
@@ -14,10 +12,14 @@ class ApplicationController < ActionController::Base
 
   private
   def find_school_by_subdomain
+    find_school unless request.subdomain == 'www'
+  end
+
+  def find_school
     @school = School.where(:subdomain => request.subdomain).first || school_not_found
   end
 
   def school_not_found
-    render 'public/school_not_found'
+    raise ActionController::RoutingError.new('School Not Found')
   end
 end

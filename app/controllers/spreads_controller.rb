@@ -1,4 +1,6 @@
 class SpreadsController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /spreads
   # GET /spreads.json
   def index

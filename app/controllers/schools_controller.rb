@@ -1,4 +1,6 @@
 class SchoolsController < ApplicationController
+  before_filter :authenticate_user!
+  
   # GET /schools
   # GET /schools.json
   def index
@@ -23,14 +25,14 @@ class SchoolsController < ApplicationController
 
   # GET /schools/new
   # GET /schools/new.json
-  def new
-    @school = School.new
+  #def new
+    #@school = School.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @school }
-    end
-  end
+    #respond_to do |format|
+      #format.html # new.html.erb
+      #format.json { render json: @school }
+    #end
+  #end
 
   # GET /schools/1/edit
   def edit

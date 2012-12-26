@@ -12,10 +12,10 @@ class SchoolsControllerTest < MiniTest::Rails::ActionController::TestCase
     assert_not_nil assigns(:schools)
   end
 
-  test "should get new" do
-    get :new
-    assert_response :success
-  end
+  #test "should get new" do
+    #get :new
+    #assert_response :success
+  #end
 
   test "should create school" do
     assert_difference('School.count') do

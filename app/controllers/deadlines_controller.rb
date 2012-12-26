@@ -1,4 +1,6 @@
 class DeadlinesController < ApplicationController
+  before_filter :authenticate_user!
+
   # GET /deadlines
   # GET /deadlines.json
   def index
