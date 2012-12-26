@@ -2,7 +2,7 @@ require 'minitest_helper'
 
 class SpreadsControllerTest < MiniTest::Rails::ActionController::TestCase
   setup do
-    sign_in users(:one)
+    sign_in_user(:one)
     @spread = spreads(:one)
   end
 

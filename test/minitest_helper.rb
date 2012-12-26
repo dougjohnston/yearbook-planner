@@ -16,4 +16,9 @@ end
 
 class MiniTest::Rails::ActionController::TestCase
   include Devise::TestHelpers
+
+  def sign_in_user(fixture, subdomain='aai')
+    request.host = "#{subdomain}.test.com"
+    sign_in users(fixture)
+  end
 end

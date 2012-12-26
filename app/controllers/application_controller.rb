@@ -7,7 +7,6 @@ class ApplicationController < ActionController::Base
   before_filter :authenticate_user!
   before_filter :find_school_by_subdomain
 
-  
   protected
   def layout_by_resource
     devise_controller? ? 'devise' : 'application'
@@ -19,7 +18,6 @@ class ApplicationController < ActionController::Base
   end
 
   def school_not_found
-    raise ActionController::RoutingError.new('School Not Found')
+    render 'public/school_not_found'
   end
-
 end

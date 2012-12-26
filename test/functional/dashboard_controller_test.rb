@@ -8,8 +8,15 @@ class DashboardControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   test "should allow authenticated user" do
-    sign_in users(:one)
+    sign_in_user(:one)
     get :index
     assert_response :success
+  end
+
+  test "should set school based on subdomain" do
+    sign_in_user(:one)
+    get :index
+    puts "School #{assigns(:school)}"
+    assert_equal assigns(:school)['subdomain'], 'aai'
   end
 end
