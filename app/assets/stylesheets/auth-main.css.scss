@@ -1,0 +1,44 @@
+// CSS For Authentication Pages
+@import 'mixins'; 
+
+// COLORS
+$black: #333333;
+$dark-gray: #777777;
+$medium-gray: #aaaaaa;
+$light-gray: #efefef;
+$white: #ffffff;
+
+body {
+  background-color: $light-gray;
+}
+
+#auth-form {
+  width: 400px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: $white;
+  text-align: center;
+  border: 1px solid $medium-gray;
+  @include rounded-corners(10px);
+
+  #title {
+    margin-bottom: 30px;
+
+    h2 {
+      font-size: 28px;
+      line-height: 100%;
+    }
+    h3 {
+      font-size: 20px;
+      line-height: 100%;
+      text-transform: uppercase;
+      color: $dark-gray;
+    }
+  }
+
+  label {
+    float: left;
+    width: 8em;
+    text-align: left;
+  }
+}

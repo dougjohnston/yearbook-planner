@@ -1,9 +1,9 @@
 /*
- * Main Application Manifest
+ * Public Manifest
  *
  *= require_self
  *= require bootstrap
  *= require mixins
- *= require scaffolds
- *= require main
+ *= require pub-main
  */
+

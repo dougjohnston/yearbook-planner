@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= authentication_layout_title %></title>
+  <%= stylesheet_link_tag    "authentication", :media => "all" %>
+  <%= javascript_include_tag "authentication" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <div id="auth-form">
+    <% if notice %>
+      <p class="notice"><%= notice %></p>
+    <% end %>
+    <% if alert %>
+      <p class="alert"><%= alert %></p>
+    <% end %>
+
+    <%= yield %>
+  </div>
+</body>
+</html>

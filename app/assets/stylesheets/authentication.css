@@ -1,9 +1,9 @@
 /*
- * Main Application Manifest
+ * Authentication Manifest
  *
  *= require_self
  *= require bootstrap
  *= require mixins
- *= require scaffolds
- *= require main
+ *= require auth-main
  */
+

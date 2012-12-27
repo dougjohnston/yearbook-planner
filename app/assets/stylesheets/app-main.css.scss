@@ -1,0 +1,12 @@
+// CSS For Primary Application
+@import 'mixins'; 
+
+// COLORS
+$primary: #336699;
+$secondary: #669933;
+$white: #ffffff;
+$black: #333333;
+
+header {
+  background-color: $primary;
+}

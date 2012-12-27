@@ -8,11 +8,24 @@
 </head>
 <body>
   <header>
+    <h1><%= @school.short_name %> Yearbook Planner</h1>
+    <nav>
+      <ul>
+        <li>Dashboard</li>
+        <li>Pages</li>
+        <li>Assignments</li>
+        <li>People</li>
+        <li>Settings</li>
+      </ul>
+    </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
   </header>
 
-  <h1><%= content_for :title %></h1>
   <%= yield %>
+
+  <footer>
+    &copy; Copyright <%= Time.now.year %> Doug Johnston. All Rights Reserved.
+  </footer>
 </body>
 </html>

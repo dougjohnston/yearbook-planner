@@ -7,7 +7,13 @@ class ApplicationController < ActionController::Base
 
   protected
   def layout_by_resource
-    devise_controller? ? 'devise' : 'application'
+    if request.subdomain == 'www'
+      'public'
+    elsif devise_controller?
+      'authentication'
+    else
+      'application'
+    end
   end
 
   private

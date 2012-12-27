@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Yearbook Planner - yearbookplanner.com</title>
+  <%= stylesheet_link_tag    "public", :media => "all" %>
+  <%= javascript_include_tag "public" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1>Yearbook Planner</h1>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  </header>
+
+  <h2><%= content_for :title %></h2>
+  <%= yield %>
+</body>
+</html>

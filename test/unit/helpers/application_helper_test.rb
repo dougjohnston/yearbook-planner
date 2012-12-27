@@ -18,9 +18,14 @@ class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
     assert_equal "Proper", helper.content_for(:title)
   end
 
-  test "sets layout title for Devise controllers" do
+  test "sets a banner title" do
     @school = schools(:one)
-    assert_equal "AAI Login - yearbookplanner.com", devise_layout_title
+    assert_equal "AAI Yearbook Planner", banner_title
+  end
+
+  test "sets layout title for auth controllers" do
+    @school = schools(:one)
+    assert_equal "AAI Login - yearbookplanner.com", authentication_layout_title
   end
 
   #test "sets layout title for Appliaction controllers" do

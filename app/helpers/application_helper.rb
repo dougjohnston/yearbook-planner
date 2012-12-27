@@ -7,12 +7,16 @@ module ApplicationHelper
     school_short_name + page_title + layout_title_suffix
   end
 
-  def devise_layout_title
+  def authentication_layout_title
     school_short_name + ' Login' + layout_title_suffix
   end
 
   def page_title
     content_for?(:title) ? content_for(:title) : 'Yearbook Planner'
+  end
+
+  def banner_title
+    "#{school_short_name} Yearbook Planner"
   end
 
   def school_short_name
