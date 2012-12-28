@@ -2,8 +2,8 @@
  * Authentication Manifest
  *
  *= require_self
- *= require bootstrap
- *= require mixins
- *= require auth-main
+ *= require support/bootstrap
+ *= require support/mixins
+ *= require authentication/auth-main
  */
 

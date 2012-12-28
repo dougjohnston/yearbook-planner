@@ -2,8 +2,8 @@
  * Main Application Manifest
  *
  *= require_self
- *= require bootstrap
- *= require mixins
- *= require scaffolds
- *= require main
+ *= require support/bootstrap
+ *= require support/mixins
+ *= require support/scaffolds
+ *= require application/app-main
  */

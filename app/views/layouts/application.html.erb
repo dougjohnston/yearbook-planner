@@ -10,7 +10,7 @@
   <header>
     <h1><%= @school.short_name %> Yearbook Planner</h1>
     <nav>
-      <ul>
+      <ul class='clearfix'>
         <li>Dashboard</li>
         <li>Pages</li>
         <li>Assignments</li>
@@ -18,9 +18,8 @@
         <li>Settings</li>
       </ul>
     </nav>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
   </header>
+  <%= render 'shared/notices' %>
 
   <%= yield %>
 

@@ -1,0 +1,8 @@
+/*
+ * Twitter Bootstrap Manifest
+ *
+ *= require_self
+ *= require support/bootstrap/bootstrap.min
+ *= require support/bootstrap/bootstrap-responsive.min
+ */
+

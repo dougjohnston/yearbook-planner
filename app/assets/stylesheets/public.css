@@ -2,8 +2,8 @@
  * Public Manifest
  *
  *= require_self
- *= require bootstrap
- *= require mixins
- *= require pub-main
+ *= require support/bootstrap
+ *= require support/mixins
+ *= require public/pub-main
  */
 

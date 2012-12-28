@@ -1,5 +1,5 @@
 //
-// Main Application JS Manifest
+// Main Public JS Manifest
 //
 //= require jquery
 //= require jquery_ujs
