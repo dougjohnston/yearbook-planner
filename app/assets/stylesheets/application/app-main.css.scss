@@ -2,22 +2,34 @@
 @import '../support/mixins'; 
 
 // COLORS
-$primary: #336699;
-$secondary: #669933;
+$one: #336699;
+$two: #669933;
 $white: #ffffff;
 $black: #333333;
 
 header {
-  background-color: $primary;
+  padding: 3px 10px;
+  background-color: $one;
   color: $white;
   h1 {
     margin: 0;
+    font-size: 23px;
   }
   nav {
     ul {
       list-style: none;
       li {
         float: left;
+        margin-right: 20px;
+        a {
+          color: $white;
+          text-transform: uppercase;
+        }
+      }
+      li.active {
+        a {
+          text-decoration: underline;
+        }
       }
     }
   }

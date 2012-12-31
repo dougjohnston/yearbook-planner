@@ -10,19 +10,19 @@
   <header>
     <h1><%= @school.short_name %> Yearbook Planner</h1>
     <nav>
-      <ul class='clearfix'>
-        <li>Dashboard</li>
-        <li>Pages</li>
-        <li>Assignments</li>
-        <li>People</li>
-        <li>Settings</li>
+      <ul class='nav clearfix'>
+        <li class='active'><%= link_to "Dashboard", dashboard_url %></li>
+        <li><%= link_to "Assignments", events_url %></li>
+        <li><%= link_to "Pages", yearbooks_url %></li>
+        <li><%= link_to "Staff", users_url %></li>
+        <li><%= link_to "Settings", dashboard_url %></li>
       </ul>
     </nav>
   </header>
-  <%= render 'shared/notices' %>
-
-  <%= yield %>
-
+  <section id="main" class="container-fluid">
+    <%= render 'shared/notices' %>
+    <%= yield %>
+  </section>
   <footer>
     &copy; Copyright <%= Time.now.year %> Doug Johnston. All Rights Reserved.
   </footer>

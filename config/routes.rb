@@ -3,16 +3,22 @@ require 'subdomain'
 YearbookPlanner::Application.routes.draw do
   devise_for :users
 
-  resources :pages
-  resources :schools
-  resources :sections
-  resources :spreads
-  resources :yearbooks
+  resource :dashboard, :controller => 'dashboard'
   resources :deadlines
   resources :events
+  resources :schools
+  resources :users
+
+  resources :yearbooks do
+    resources :sections do
+      resources :spreads do
+        resources :pages
+      end
+    end
+  end
 
   constraints(Subdomain) do
-    match '/' => 'dashboard#index'
+    match '/' => 'dashboard#show'
   end
 
   root :to => 'public#index'
