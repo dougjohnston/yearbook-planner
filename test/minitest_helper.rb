@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require "minitest/autorun"
 require "minitest/rails"
+require "mocha/setup"
 require "turn/autorun"
 
 class MiniTest::Rails::ActiveSupport::TestCase
@@ -14,11 +15,12 @@ class MiniTest::Rails::ActiveSupport::TestCase
   # Add more helper methods to be used by all tests here...
 end
 
-class MiniTest::Rails::ActionController::TestCase
+class FunctionalTest < MiniTest::Rails::ActionController::TestCase
   include Devise::TestHelpers
 
   def sign_in_user(fixture, subdomain='aai')
     request.host = "#{subdomain}.test.com"
-    sign_in users(fixture)
+    @current_user = users(fixture)
+    sign_in @current_user
   end
 end

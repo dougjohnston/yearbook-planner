@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class DeadlinesControllerTest < MiniTest::Rails::ActionController::TestCase
+class DeadlinesControllerTest < FunctionalTest
   setup do
     sign_in_user(:one)
     @deadline = deadlines(:one)

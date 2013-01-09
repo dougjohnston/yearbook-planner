@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class SpreadsControllerTest < MiniTest::Rails::ActionController::TestCase
+class SpreadsControllerTest < FunctionalTest
   setup do
     sign_in_user(:one)
     @spread = spreads(:one)

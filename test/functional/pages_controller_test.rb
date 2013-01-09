@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class PagesControllerTest < MiniTest::Rails::ActionController::TestCase
+class PagesControllerTest < FunctionalTest
   setup do
     sign_in_user(:one)
     @page = pages(:one)

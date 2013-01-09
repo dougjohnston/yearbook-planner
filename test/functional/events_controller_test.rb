@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class EventsControllerTest < MiniTest::Rails::ActionController::TestCase
+class EventsControllerTest < FunctionalTest
   setup do
     sign_in_user(:one)
     @event = events(:one)

@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class SectionsControllerTest < MiniTest::Rails::ActionController::TestCase
+class SectionsControllerTest < FunctionalTest
   setup do
     sign_in_user(:one)
     @section = sections(:one)

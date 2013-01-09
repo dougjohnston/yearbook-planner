@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class PublicControllerTest < MiniTest::Rails::ActionController::TestCase
+class PublicControllerTest < FunctionalTest
   test "should send anonymous visitor to the public homepage" do
     request.host = 'www.test.com'
 

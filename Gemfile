@@ -34,6 +34,9 @@ group :test do
   gem 'guard-minitest'
   gem 'rb-fsevent', '~> 0.9.1'
 
+  # Helper libraries
+  gem 'mocha', :require => false
+
   # Test notifications
   gem 'growl'
 

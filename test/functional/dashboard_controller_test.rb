@@ -1,10 +1,18 @@
 require 'minitest_helper'
 
-class DashboardControllerTest < MiniTest::Rails::ActionController::TestCase
+class DashboardControllerTest < FunctionalTest
+  setup do
+    sign_in_user(:one)
+  end
+  test "should route to the dashboard" do
+    assert_routing "http://aai.test.com/dashboard", :controller => "dashboard", :action => "show"
+  end
+
   test "should redirect anonymous visitor" do
+    sign_out @current_user
     request.host = 'www.test.com'
 
-    get :index
+    get :show
     assert_nil assigns(:school)
     assert_equal 'www', request.subdomain
 
@@ -13,21 +21,20 @@ class DashboardControllerTest < MiniTest::Rails::ActionController::TestCase
   end
 
   test "should allow authenticated user" do
-    sign_in_user(:one)
-    get :index
+    get :show
     assert_response :success
   end
 
   test "should set school based on subdomain" do
-    sign_in_user(:one)
-    get :index
+    get :show
     assert_equal 'aai', assigns(:school)['subdomain']
   end
 
   test "should raise a routing error if the school is unknown" do
+    sign_out @current_user
     sign_in_user(:one, 'unknown')
     assert_raises(ActionController::RoutingError) do
-      get :index
+      get :show
     end
   end
 end

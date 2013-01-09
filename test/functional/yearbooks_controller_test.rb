@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class YearbooksControllerTest < MiniTest::Rails::ActionController::TestCase
+class YearbooksControllerTest < FunctionalTest
   setup do
     sign_in_user(:one)
     @yearbook = yearbooks(:one)
