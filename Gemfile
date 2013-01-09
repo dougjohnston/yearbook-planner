@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Framework
-gem 'rails', '3.2.9'
+gem 'rails', '3.2.10'
 gem 'mysql2'
 
 # Not needed after an upgrade to Rails 4.x

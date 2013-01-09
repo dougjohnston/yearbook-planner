@@ -4,11 +4,11 @@ module ApplicationHelper
   end
 
   def application_layout_title
-    school_short_name + page_title + layout_title_suffix
+    [school_short_name, page_title, layout_title_suffix].join(' ')
   end
 
   def authentication_layout_title
-    school_short_name + ' Login' + layout_title_suffix
+    [school_short_name, 'Login', layout_title_suffix].join(' ')
   end
 
   def page_title
@@ -24,6 +24,6 @@ module ApplicationHelper
   end
 
   def layout_title_suffix
-    ' - yearbookplanner.com'
+    '- yearbookplanner.com'
   end
 end

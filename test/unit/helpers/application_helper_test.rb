@@ -13,6 +13,11 @@ class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
     view.stubs(:school_short_name).returns("AAI")
   end
 
+  test "school short name" do
+    @school = schools(:one)
+    assert_equal "AAI", school_short_name
+  end
+
   test "sets title" do
     view.title("Proper")
     assert_equal "Proper", view.content_for(:title)
