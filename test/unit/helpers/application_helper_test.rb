@@ -5,36 +5,29 @@ class MockView < ActionView::Base
 end
 
 class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
-  #setup do
-    #@template = MockView.new
-  #end
+  def view
+    @view ||= MockView.new
+  end
 
-  def helper
-    @helper ||= MockView.new
+  setup do
+    view.stubs(:school_short_name).returns("AAI")
   end
 
   test "sets title" do
-    helper.title("Proper")
-    assert_equal "Proper", helper.content_for(:title)
+    view.title("Proper")
+    assert_equal "Proper", view.content_for(:title)
   end
 
   test "sets a banner title" do
-    @school = schools(:one)
-    assert_equal "AAI Yearbook Planner", banner_title
+    assert_equal "AAI Yearbook Planner", view.banner_title
   end
 
   test "sets layout title for auth controllers" do
-    @school = schools(:one)
-    assert_equal "AAI Login - yearbookplanner.com", authentication_layout_title
+    assert_equal "AAI Login - yearbookplanner.com", view.authentication_layout_title
   end
 
-  #test "sets layout title for Appliaction controllers" do
-    #@school = schools(:one)
-    ##helper.title("Test Page")
-    #helper.stub :content_for, 'Test Page' do 
-      #assert_equal "AAI Test Page - yearbookplanner.com", application_layout_title
-    #end
-    ##mock.expect(:content_for, 'Test Page', [:title])
-    ##puts helper.content_for(:title)
-  #end
+  test "sets layout title for Application controllers" do
+    view.title("Test Page")
+    assert_equal "AAI Test Page - yearbookplanner.com", view.application_layout_title
+  end
 end

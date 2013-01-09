@@ -2,6 +2,7 @@ ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
 require "minitest/autorun"
 require "minitest/rails"
+require 'minitest/growl_notify'
 require "mocha/setup"
 require "turn/autorun"
 
@@ -24,3 +25,4 @@ class FunctionalTest < MiniTest::Rails::ActionController::TestCase
     sign_in @current_user
   end
 end
+

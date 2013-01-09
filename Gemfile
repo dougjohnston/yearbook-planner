@@ -38,7 +38,7 @@ group :test do
   gem 'mocha', :require => false
 
   # Test notifications
-  gem 'growl'
+  gem 'minitest-growl'
 
   # Autotest & Spork
   #gem 'spork'
