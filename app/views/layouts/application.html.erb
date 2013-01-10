@@ -9,10 +9,10 @@
 <body>
   <header>
     <nav id="nav-utility">
-      Doug Johnston
-      <%= link_to "profile", dashboard_url %> |
+      <%= current_user.full_name %> |
+      <%= link_to "profile", edit_user_url(current_user.id) %> |
       <%= link_to "help", events_url %> |
-      <%= link_to "sign out", dashboard_url %>
+      <%= link_to "sign out", destroy_user_session_path %>
     </nav>
     <h1><%= @school.short_name %> Yearbook Planner</h1>
     <%= render 'layouts/application/navigation' %>
@@ -22,7 +22,14 @@
     <%= yield %>
   </section>
   <footer>
-    &copy; Copyright <%= Time.now.year %> Doug Johnston. All Rights Reserved.
+    <div class='left'>
+      Logged in as <%= link_to current_user.full_name, edit_user_path(current_user.id) %> |
+      <%= link_to "help", events_url %> |
+      <%= link_to "sign out", dashboard_url %>
+    </div>
+    <div class='right'>
+      &copy; Copyright <%= Time.now.year %> Doug Johnston. All Rights Reserved.
+    </div>
   </footer>
 </body>
 </html>

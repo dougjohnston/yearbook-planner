@@ -1,12 +1,6 @@
 // CSS For Primary Application
 @import '../support/mixins'; 
 
-// COLORS
-$one: #336699;
-$two: #669933;
-$white: #ffffff;
-$black: #333333;
-
 header {
   padding: 3px 20px;
   background-color: $one;
@@ -39,4 +33,9 @@ header {
   }
 }
 
+footer {
+  margin: 20px;
+  padding: 3px 5px;
+  border-top: 1px solid $light-gray;
+}
 
