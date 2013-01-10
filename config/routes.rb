@@ -6,6 +6,7 @@ YearbookPlanner::Application.routes.draw do
   # Make each resource available directly
   resources :schools
   resources :users
+  resources :assignments
   resources :yearbooks
   resources :deadlines
   resources :events

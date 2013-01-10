@@ -1,10 +1,10 @@
 <nav id="nav-main">
   <ul class='nav clearfix'>
-    <li class='active'><%= link_to "Dashboard", dashboard_url %></li>
-    <li><%= link_to "Assignments", events_url %></li>
-    <li><%= link_to "Ladder", yearbooks_url %></li>
-    <li><%= link_to "Staff", users_url %></li>
-    <li><%= link_to "Archive", users_url %></li>
-    <li><%= link_to "Settings", dashboard_url %></li>
+    <%= active_link_to "Dashboard", dashboard_path, :wrap_tag => :li %>
+    <%= active_link_to "Assignments", assignments_path, :wrap_tag => :li %>
+    <%= active_link_to "Ladder", yearbooks_path, :wrap_tag => :li %>
+    <%= active_link_to "Staff", users_path, :wrap_tag => :li %>
+    <%= active_link_to "Archive", users_path, :wrap_tag => :li %>
+    <%= active_link_to "Settings", events_path, :wrap_tag => :li %>
   </ul>
 </nav>

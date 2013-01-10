@@ -13,4 +13,10 @@ class User < ActiveRecord::Base
   has_many :spreads, :through => :assignments, :source => :assignable, :source_type => 'Spread'
   has_many :pages, :through => :assignments, :source => :assignable, :source_type => 'Page'
   has_many :events, :through => :assignments, :source => :assignable, :source_type => 'Event'
+
+  validates :first_name, :last_name, :presence => true
+
+  def full_name
+    [first_name, last_name].join(' ').chomp(' ')
+  end
 end

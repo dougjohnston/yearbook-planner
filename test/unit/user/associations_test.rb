@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class UserTest < MiniTest::Rails::ActiveSupport::TestCase
+class UserAssociationTest < MiniTest::Rails::ActiveSupport::TestCase
   setup do
     @user = users(:one)
   end

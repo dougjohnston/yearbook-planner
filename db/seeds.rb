@@ -5,7 +5,7 @@ school_one = School.create(name: "Alliance Academy International", short_name: "
 school_two = School.create(name: "Rancho Bernardo High School", short_name: "RBHS", subdomain: 'rbhs')
 
 # Create some users
-User.create(school: school_one, email: "dbjohnston@aai.com", password: "eoselan", password_confirmation: "eoselan", confirmed_at: Time.now)
+User.create(school: school_one, email: "dbjohnston@aai.com", first_name: "Doug", last_name: "Johnston", password: "eoselan", password_confirmation: "eoselan", confirmed_at: Time.now)
 User.create(school: school_two, email: "dbjohnston@rbhs.com", password: "eoselan", password_confirmation: "eoselan", confirmed_at: Time.now)
 
 # Create a yearbook

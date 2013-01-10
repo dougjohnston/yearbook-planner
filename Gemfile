@@ -16,8 +16,10 @@ gem 'ranked-model'
 
 # Views
 gem 'jquery-rails'
+gem 'active_link_to'
 
-# Asset gems
+
+# FOR ASSETS
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
@@ -25,29 +27,30 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+# FOR DEVELOPMENT
+group :development do
+  gem 'better_errors' # prettier and more functional error pages
+  gem 'binding_of_caller' # support for better_errors
+end
+
+# FOR TESTING
 group :test do
   gem 'minitest-rails'
   gem 'turn'
+
+  # Support libraries
+  gem 'factory_girl_rails'
+  gem 'mocha', :require => false
 
   # Autotest w/ Guard
   gem 'guard'
   gem 'guard-minitest'
   gem 'rb-fsevent', '~> 0.9.1'
 
-  # Helper libraries
-  gem 'mocha', :require => false
-
   # Test notifications
   gem 'minitest-growl'
-
-  # Autotest & Spork
-  #gem 'spork'
-  #gem 'autotest-standalone' # The file '.autotest' makes sure the tests are run via test server (spork).
-  #gem 'autotest-rails-pure' # -pure gives us autotest without ZenTest gem.
-  #gem 'autotest-growl'      # growl notifications, complains a little bit if growl isn't installed
-  #gem 'autotest-fsevent'
-  #gem 'spork-minitest'
 end
+
 
 # To use Jbuilder templates for JSON
 # gem 'jbuilder'

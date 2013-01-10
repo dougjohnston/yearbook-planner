@@ -3,6 +3,9 @@ require File.expand_path('../../config/environment', __FILE__)
 require "minitest/autorun"
 require "minitest/rails"
 require 'minitest/growl_notify'
+
+# Support
+require "factory_girl_rails"
 require "mocha/setup"
 require "turn/autorun"
 

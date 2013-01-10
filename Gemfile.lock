@@ -14,6 +14,7 @@ GEM
       rack-cache (~> 1.2)
       rack-test (~> 0.6.1)
       sprockets (~> 2.2.1)
+    active_link_to (1.0.0)
     activemodel (3.2.11)
       activesupport (= 3.2.11)
       builder (~> 3.0.0)
@@ -31,6 +32,10 @@ GEM
     ansi (1.4.3)
     arel (3.0.2)
     bcrypt-ruby (3.0.1)
+    better_errors (0.3.2)
+      coderay (>= 1.0.0)
+      erubis (>= 2.7.0)
+    binding_of_caller (0.6.8)
     builder (3.0.4)
     coderay (1.0.8)
     coffee-rails (3.2.2)
@@ -48,6 +53,11 @@ GEM
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
+    factory_girl (4.1.0)
+      activesupport (>= 3.0.0)
+    factory_girl_rails (4.1.0)
+      factory_girl (~> 4.1.0)
+      railties (>= 3.0.0)
     growl (1.0.3)
     guard (1.6.1)
       listen (>= 0.6.0)
@@ -155,8 +165,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_link_to
+  better_errors
+  binding_of_caller
   coffee-rails (~> 3.2.1)
   devise
+  factory_girl_rails
   guard
   guard-minitest
   jquery-rails
