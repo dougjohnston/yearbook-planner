@@ -10,9 +10,9 @@
   <header>
     <nav id="nav-utility">
       <%= current_user.full_name %> |
-      <%= link_to "profile", edit_user_url(current_user.id) %> |
-      <%= link_to "help", events_url %> |
-      <%= link_to "sign out", destroy_user_session_path %>
+      <%= link_to "profile", edit_user_path(current_user.id) %> |
+      <%= link_to "help", events_path %> |
+      <%= link_to "sign out", destroy_user_session_path, :method => :delete  %>
     </nav>
     <h1><%= @school.short_name %> Yearbook Planner</h1>
     <%= render 'layouts/application/navigation' %>
@@ -24,8 +24,8 @@
   <footer>
     <div class='left'>
       Logged in as <%= link_to current_user.full_name, edit_user_path(current_user.id) %> |
-      <%= link_to "help", events_url %> |
-      <%= link_to "sign out", dashboard_url %>
+      <%= link_to "help", events_path %> |
+      <%= link_to "sign out", destroy_user_session_path, :method => :delete  %>
     </div>
     <div class='right'>
       &copy; Copyright <%= Time.now.year %> Doug Johnston. All Rights Reserved.
