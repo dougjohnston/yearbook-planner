@@ -6,6 +6,8 @@ guard 'minitest' do
   watch(%r|^test/(.*)\/?_test(.*)\.rb|)
   watch(%r|^lib/(.*)([^/]+)\.rb|)     { |m| "test/#{m[1]}_test#{m[2]}.rb" }
   watch(%r|^test/minitest_helper\.rb|)    { "test" }
+  watch(%r|^test/factories/(.*).rb|)    { |m| "test/unit/#{m[1]}_test.rb" }
+  watch(%r|^test/factories/(.*).rb|)    { |m| "test/unit/#{m[1]}" }
 
   # Rails 3.2
   watch(%r|^app/controllers/application_controller.rb|)    { "test" }

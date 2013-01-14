@@ -3,4 +3,8 @@ class School < ActiveRecord::Base
 
   has_many :users
   has_many :yearbooks
+
+  def current_yearbook
+    yearbooks
+  end
 end

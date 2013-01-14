@@ -131,6 +131,7 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
 
   create_table "yearbooks", :force => true do |t|
     t.integer  "school_id"
+    t.boolean  "current"
     t.string   "starting_year"
     t.string   "ending_year"
     t.string   "title"

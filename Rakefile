@@ -11,12 +11,42 @@ namespace :db do
   task :wipe => :environment do
     puts "Dropping the database..."
     Rake::Task['db:drop'].execute
+    
     puts "Creating a new database..."
     Rake::Task['db:create'].execute
+
     puts "Running migrations..."
     Rake::Task['db:migrate'].execute
+
     puts "Seeding the database..."
     Rake::Task['db:seed'].execute
+
     puts "Done."
+  end
+
+  task :wipe_without_seed => :environment do
+    puts "Dropping the database..."
+    Rake::Task['db:drop'].execute
+    
+    puts "Creating a new database..."
+    Rake::Task['db:create'].execute
+
+    puts "Running migrations..."
+    Rake::Task['db:migrate'].execute
+
+    puts "Done."
+  end
+
+
+  desc "Wipe the development and test databases"
+  namespace :wipe do
+    task :all => :environment do
+      puts "Wiping the development database..."
+      Rake::Task['db:wipe'].execute
+
+      puts "Wiping the test database..."
+      Rails.env = "test"
+      system("rake db:wipe_without_seed RAILS_ENV=test")
+    end
   end
 end
