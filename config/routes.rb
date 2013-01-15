@@ -14,13 +14,13 @@ YearbookPlanner::Application.routes.draw do
   resources :spreads
   resources :pages
 
-  resources :yearbooks do
-    resources :deadlines
-    resources :events
-    resources :sections
-    resources :spreads
-    resources :pages
-  end
+  #resources :yearbooks do
+    #resources :deadlines
+    #resources :events
+    #resources :sections
+    #resources :spreads
+    #resources :pages
+  #end
 
   resource :dashboard, :controller => 'dashboard'
 

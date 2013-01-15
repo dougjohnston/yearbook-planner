@@ -2,8 +2,8 @@ require 'minitest_helper'
 
 class DeadlinesControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
-    @deadline = deadlines(:one)
+    sign_in_user
+    @deadline = FactoryGirl.create(:deadline)
   end
 
   test "should get index" do
@@ -26,7 +26,7 @@ class DeadlinesControllerTest < FunctionalTest
   end
 
   test "should show deadline" do
-    get :show, id: @deadline
+    get :show, id: @deadline.id
     assert_response :success
   end
 

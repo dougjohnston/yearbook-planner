@@ -2,8 +2,8 @@ require 'minitest_helper'
 
 class EventsControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
-    @event = events(:one)
+    sign_in_user
+    @event = FactoryGirl.create(:event)
   end
 
   test "should get index" do

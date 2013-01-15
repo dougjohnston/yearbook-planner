@@ -12,7 +12,7 @@ class PublicControllerTest < FunctionalTest
   end
 
   test "should raise a routing error if the school is unknown" do
-    sign_in_user(:one, 'unknown')
+    sign_in_user(:user, 'unknown')
     assert_raises(ActionController::RoutingError) do
       get :index
     end

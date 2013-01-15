@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class UserValidationTest < MiniTest::Rails::ActiveSupport::TestCase
+class UserValidationTest < UnitTest
   setup do
     @user = FactoryGirl.build(:user)
   end

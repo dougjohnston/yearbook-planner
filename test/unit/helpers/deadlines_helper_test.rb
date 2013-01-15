@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class DeadlinesHelperTest < MiniTest::Rails::ActionView::TestCase
+class DeadlinesHelperTest < IntegrationTest
 end

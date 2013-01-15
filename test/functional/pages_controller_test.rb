@@ -2,8 +2,8 @@ require 'minitest_helper'
 
 class PagesControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
-    @page = pages(:one)
+    sign_in_user
+    @page = FactoryGirl.create(:page)
   end
 
   test "should get index" do
@@ -19,7 +19,7 @@ class PagesControllerTest < FunctionalTest
 
   test "should create page" do
     assert_difference('Page.count') do
-      post :create, page: { spread: @page.spread, title: @page.title }
+      post :create, page: { spread_id: @page.spread, title: @page.title }
     end
 
     assert_redirected_to page_path(assigns(:page))
@@ -36,7 +36,7 @@ class PagesControllerTest < FunctionalTest
   end
 
   test "should update page" do
-    put :update, id: @page, page: { spread: @page.spread, title: @page.title }
+    put :update, id: @page, page: { spread_id: @page.spread, title: @page.title }
     assert_redirected_to page_path(assigns(:page))
   end
 

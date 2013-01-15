@@ -2,7 +2,7 @@ require 'minitest_helper'
 
 class DashboardControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
+    sign_in_user
   end
   test "should route to the dashboard" do
     assert_routing "http://aai.test.com/dashboard", :controller => "dashboard", :action => "show"
@@ -32,7 +32,7 @@ class DashboardControllerTest < FunctionalTest
 
   test "should raise a routing error if the school is unknown" do
     sign_out @current_user
-    sign_in_user(:one, 'unknown')
+    sign_in_user(:user, 'unknown')
     assert_raises(ActionController::RoutingError) do
       get :show
     end

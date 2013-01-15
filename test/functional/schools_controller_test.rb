@@ -2,8 +2,8 @@ require 'minitest_helper'
 
 class SchoolsControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
-    @school = schools(:one)
+    sign_in_user
+    @school = FactoryGirl.create(:school)
   end
 
   test "should get index" do

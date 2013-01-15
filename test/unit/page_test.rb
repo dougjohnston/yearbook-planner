@@ -1,23 +1,23 @@
 require 'minitest_helper'
 
-class PageTest < MiniTest::Rails::ActiveSupport::TestCase
+class PageTest < UnitTest
   setup do
-    @page = pages(:one)
+    @page = FactoryGirl.create(:page)
   end
 
   test "can be assigned to a user" do
-    user = users(:one)
+    user = FactoryGirl.build(:user)
     assert_difference '@page.users.count' do
       @page.users << user
     end
   end
 
   test "can be assigned to multiple users" do
-    user_one = users(:one)
-    user_two = users(:two)
+    one = FactoryGirl.build(:user)
+    two = FactoryGirl.build(:user)
     assert_difference '@page.users.count', +2 do
-      @page.users << user_one
-      @page.users << user_two
+      @page.users << one
+      @page.users << two
     end
   end
 end

@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class PublicHelperTest < MiniTest::Rails::ActionView::TestCase
+class PublicHelperTest < IntegrationTest
 end

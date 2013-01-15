@@ -2,22 +2,22 @@ require 'minitest_helper'
 
 class SpreadTest < MiniTest::Rails::ActiveSupport::TestCase
   setup do
-    @spread = spreads(:one)
+    @spread = FactoryGirl.create(:spread)
   end
 
   test "can be assigned to a user" do
-    user = users(:one)
+    user = FactoryGirl.build(:user)
     assert_difference '@spread.users.count' do
       @spread.users << user
     end
   end
 
   test "can be assigned to multiple users" do
-    user_one = users(:one)
-    user_two = users(:two)
+    one = FactoryGirl.build(:user)
+    two = FactoryGirl.build(:user)
     assert_difference '@spread.users.count', +2 do
-      @spread.users << user_one
-      @spread.users << user_two
+      @spread.users << one
+      @spread.users << two
     end
   end
 end

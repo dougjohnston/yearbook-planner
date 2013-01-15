@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class DeadlineTest < MiniTest::Rails::ActiveSupport::TestCase
+class DeadlineTest < UnitTest
   # test "the truth" do
   #   assert true
   # end

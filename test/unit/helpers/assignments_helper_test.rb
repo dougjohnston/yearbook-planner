@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class AssignmentsHelperTest < ActionView::TestCase
+class AssignmentsHelperTest < IntegrationTest
 end

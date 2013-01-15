@@ -11,16 +11,18 @@ require "turn/autorun"
 
 Turn.config.format = :outline
 
-class MiniTest::Rails::ActiveSupport::TestCase
-  fixtures :all
+class UnitTest < ActiveSupport::TestCase
+end
+
+class IntegrationTest < ActionView::TestCase
 end
 
 class FunctionalTest < MiniTest::Rails::ActionController::TestCase
   include Devise::TestHelpers
 
-  def sign_in_user(fixture, subdomain='aai')
+  def sign_in_user(factory=:user, subdomain='aai')
     request.host = "#{subdomain}.test.com"
-    @current_user = users(fixture)
+    @current_user = FactoryGirl.create(factory)
     sign_in @current_user
   end
 end

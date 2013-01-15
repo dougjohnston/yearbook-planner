@@ -2,7 +2,7 @@ require 'minitest_helper'
 
 class YearbooksControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
+    sign_in_user
     @yearbook = FactoryGirl.create(:yearbook)
   end
 
@@ -19,7 +19,7 @@ class YearbooksControllerTest < FunctionalTest
 
   test "should create yearbook" do
     assert_difference('Yearbook.count') do
-      post :create, yearbook: { ending_year: @yearbook.ending_year, school: @yearbook.school, starting_year: @yearbook.starting_year, theme: @yearbook.theme, title: @yearbook.title }
+      post :create, yearbook: FactoryGirl.attributes_for(:yearbook, :school_id => @yearbook.school.id)
     end
 
     assert_redirected_to yearbook_path(assigns(:yearbook))
@@ -36,7 +36,7 @@ class YearbooksControllerTest < FunctionalTest
   end
 
   test "should update yearbook" do
-    put :update, id: @yearbook, yearbook: { ending_year: @yearbook.ending_year, school: @yearbook.school, starting_year: @yearbook.starting_year, theme: @yearbook.theme, title: @yearbook.title }
+    put :update, id: @yearbook, yearbook: { title: @yearbook.title }
     assert_redirected_to yearbook_path(assigns(:yearbook))
   end
 

@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class SchoolMethodTest < MiniTest::Rails::ActiveSupport::TestCase
+class SchoolMethodTest < UnitTest
   #setup do
     #@school = FactoryGirl.build(:school)
   #end

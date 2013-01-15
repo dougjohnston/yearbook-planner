@@ -1,23 +1,23 @@
 require 'minitest_helper'
 
-class EventTest < MiniTest::Rails::ActiveSupport::TestCase
+class EventTest < UnitTest
   setup do
-    @event = events(:one)
+    @event = FactoryGirl.create(:event)
   end
 
   test "can be assigned to a user" do
-    user = users(:one)
+    user = FactoryGirl.build(:user)
     assert_difference '@event.users.count' do
       @event.users << user
     end
   end
 
   test "can be assigned to multiple users" do
-    user_one = users(:one)
-    user_two = users(:two)
+    one = FactoryGirl.build(:user)
+    two = FactoryGirl.build(:user)
     assert_difference '@event.users.count', +2 do
-      @event.users << user_one
-      @event.users << user_two
+      @event.users << one
+      @event.users << two
     end
   end
 end

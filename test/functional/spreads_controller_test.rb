@@ -2,8 +2,8 @@ require 'minitest_helper'
 
 class SpreadsControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
-    @spread = spreads(:one)
+    sign_in_user
+    @spread = FactoryGirl.create(:spread)
   end
 
   test "should get index" do

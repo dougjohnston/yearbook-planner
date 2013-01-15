@@ -4,7 +4,7 @@ class MockView < ActionView::Base
   include ApplicationHelper
 end
 
-class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
+class ApplicationHelperTest < IntegrationTest
   def view
     @view ||= MockView.new
   end
@@ -14,7 +14,7 @@ class ApplicationHelperTest < MiniTest::Rails::ActionView::TestCase
   end
 
   test "school short name" do
-    @school = schools(:one)
+    @school = FactoryGirl.build(:school)
     assert_equal "AAI", school_short_name
   end
 

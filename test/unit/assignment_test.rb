@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class AssignmentTest < MiniTest::Rails::ActiveSupport::TestCase
+class AssignmentTest < UnitTest
   # test "the truth" do
   #   assert true
   # end

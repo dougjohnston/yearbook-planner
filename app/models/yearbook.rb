@@ -7,6 +7,10 @@ class Yearbook < ActiveRecord::Base
 
   before_create :make_first_yearbook_current
 
+  validates :school, :starting_year, :ending_year, :presence => true
+  validates :starting_year, :ending_year, :numericality => true
+  validates :starting_year, :ending_year, :numericality => { :greater_than => 2010, :less_than => 2025 }
+
   def current!
     remove_all_current_flags
     self.reload.update_attribute(:current, true)

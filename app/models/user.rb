@@ -1,7 +1,7 @@
 class User < ActiveRecord::Base
   include ActiveModel::ForbiddenAttributesProtection
 
-  devise :database_authenticatable, :registerable, :confirmable, :lockable,
+  devise :database_authenticatable, :registerable, :lockable,
          :recoverable, :rememberable, :trackable, :validatable
 
   belongs_to :school

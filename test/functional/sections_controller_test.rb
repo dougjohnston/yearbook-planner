@@ -2,8 +2,8 @@ require 'minitest_helper'
 
 class SectionsControllerTest < FunctionalTest
   setup do
-    sign_in_user(:one)
-    @section = sections(:one)
+    sign_in_user
+    @section = FactoryGirl.create(:section)
   end
 
   test "should get index" do

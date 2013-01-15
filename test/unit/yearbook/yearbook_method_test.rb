@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class YearbookMethodTest < MiniTest::Rails::ActiveSupport::TestCase
+class YearbookMethodTest < UnitTest
   # current!
   test "makes a yearbook current" do
     one = FactoryGirl.create(:yearbook)

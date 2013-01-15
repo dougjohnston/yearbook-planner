@@ -85,6 +85,6 @@ class YearbooksController < ApplicationController
 
   private
   def yearbook_params
-    params.require(:yearbook).permit(:starting_year,:ending_year,:title,:theme)
+    params.require(:yearbook).permit(:school_id, :starting_year, :ending_year, :title, :theme)
   end
 end

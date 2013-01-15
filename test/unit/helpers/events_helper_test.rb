@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class EventsHelperTest < MiniTest::Rails::ActionView::TestCase
+class EventsHelperTest < IntegrationTest
 end
