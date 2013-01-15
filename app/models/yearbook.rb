@@ -9,10 +9,9 @@ class Yearbook < ActiveRecord::Base
 
   def current!
     remove_all_current_flags
-    self.update_attribute(:current, true)
+    self.reload.update_attribute(:current, true)
   end
 
-  private
   def make_first_yearbook_current
     self.current = true if school_yearbooks.empty?
   end
@@ -22,6 +21,6 @@ class Yearbook < ActiveRecord::Base
   end
 
   def school_yearbooks
-    Yearbook.where(:school_id => self.school_id)
+    Yearbook.where(:school_id => self.school_id).order('starting_year desc').reload
   end
 end

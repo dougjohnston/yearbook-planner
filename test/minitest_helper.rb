@@ -9,14 +9,10 @@ require "factory_girl_rails"
 require "mocha/setup"
 require "turn/autorun"
 
-class MiniTest::Rails::ActiveSupport::TestCase
-  # Setup all fixtures in test/fixtures/*.(yml|csv) for all tests in alphabetical order.
-  #
-  # Note: You'll currently still have to declare fixtures explicitly in integration tests
-  # -- they do not yet inherit this setting
-  fixtures :all
+Turn.config.format = :outline
 
-  # Add more helper methods to be used by all tests here...
+class MiniTest::Rails::ActiveSupport::TestCase
+  fixtures :all
 end
 
 class FunctionalTest < MiniTest::Rails::ActionController::TestCase

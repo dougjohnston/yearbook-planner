@@ -131,13 +131,13 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
 
   create_table "yearbooks", :force => true do |t|
     t.integer  "school_id"
-    t.boolean  "current"
-    t.string   "starting_year"
-    t.string   "ending_year"
+    t.boolean  "current",       :default => false
+    t.integer  "starting_year"
+    t.integer  "ending_year"
     t.string   "title"
     t.string   "theme"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
+    t.datetime "created_at",                       :null => false
+    t.datetime "updated_at",                       :null => false
   end
 
 end

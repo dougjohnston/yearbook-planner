@@ -1,6 +1,16 @@
 require 'minitest_helper'
 
 class YearbookValidationTest < MiniTest::Rails::ActiveSupport::TestCase
+
+  test "is valid with factory attributes" do
+    assert_equal true, FactoryGirl.build(:yearbook).valid?
+  end
+
+  test "requires a school" do
+    assert false
+    skip
+  end
+
   test "makes the first yearbook current" do
     one = FactoryGirl.create(:yearbook)
     assert_equal 1, one.school.yearbooks.length

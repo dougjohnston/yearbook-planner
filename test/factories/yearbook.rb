@@ -11,5 +11,6 @@ FactoryGirl.define do
       starting_year { Time.now.year - 2 }
       ending_year { Time.now.year - 1 }
     end
+
   end
 end

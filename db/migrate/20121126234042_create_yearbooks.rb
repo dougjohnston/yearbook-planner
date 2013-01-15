@@ -3,8 +3,8 @@ class CreateYearbooks < ActiveRecord::Migration
     create_table :yearbooks do |t|
       t.references :school
       t.boolean :current, :default => false
-      t.string :starting_year
-      t.string :ending_year
+      t.integer :starting_year
+      t.integer :ending_year
       t.string :title
       t.string :theme
 

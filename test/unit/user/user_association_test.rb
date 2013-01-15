@@ -6,18 +6,18 @@ class UserAssociationTest < MiniTest::Rails::ActiveSupport::TestCase
   end
 
   test "can belong to a yearbook" do
-    yearbook = yearbooks(:one)
+    yearbook = FactoryGirl.build(:yearbook)
     assert_difference '@user.yearbooks.count' do
       @user.yearbooks << yearbook
     end
   end
 
   test "can belong to many yearbooks" do
-    yearbook_one = yearbooks(:one)
-    yearbook_two = yearbooks(:two)
+    one = FactoryGirl.build(:yearbook)
+    two = FactoryGirl.build(:yearbook)
     assert_difference '@user.yearbooks.count', +2 do
-      @user.yearbooks << yearbook_one
-      @user.yearbooks << yearbook_two
+      @user.yearbooks << one
+      @user.yearbooks << two
     end
   end
 

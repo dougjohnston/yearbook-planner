@@ -5,6 +5,6 @@ class School < ActiveRecord::Base
   has_many :yearbooks
 
   def current_yearbook
-    yearbooks
+    yearbooks.where(:current => true).first
   end
 end

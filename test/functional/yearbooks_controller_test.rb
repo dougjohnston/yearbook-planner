@@ -3,7 +3,7 @@ require 'minitest_helper'
 class YearbooksControllerTest < FunctionalTest
   setup do
     sign_in_user(:one)
-    @yearbook = yearbooks(:one)
+    @yearbook = FactoryGirl.create(:yearbook)
   end
 
   test "should get index" do
