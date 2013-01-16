@@ -14,20 +14,21 @@ require "turn/autorun"
 
 Turn.config.format = :progress
 
+# Simplified class names
 class UnitTest < ActiveSupport::TestCase; end
 class HelperTest < ActionView::TestCase; end
 
 class IntegrationTest < ActionDispatch::IntegrationTest
+  include Rails.application.routes.url_helpers
+  include Capybara::DSL
+
   include Warden::Test::Helpers
   Warden.test_mode!
 
   def sign_in_user(factory=:user, subdomain='aai')
     @host = "http://#{subdomain}.test.com"
-
     user = FactoryGirl.create(factory)
     login_as(user, :scope => :user)
-    #@current_user = FactoryGirl.create(factory)
-    #sign_in @current_user
   end
 end
 
