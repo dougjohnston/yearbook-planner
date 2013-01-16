@@ -4,7 +4,7 @@ class MockView < ActionView::Base
   include ApplicationHelper
 end
 
-class ApplicationHelperTest < IntegrationTest
+class ApplicationHelperTest < HelperTest
   def view
     @view ||= MockView.new
   end

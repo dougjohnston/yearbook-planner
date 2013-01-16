@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class SpreadsHelperTest < IntegrationTest
+class SpreadsHelperTest < HelperTest
 end

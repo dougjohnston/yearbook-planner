@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class EventsHelperTest < IntegrationTest
+class EventsHelperTest < HelperTest
 end

@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class DeadlinesHelperTest < IntegrationTest
+class DeadlinesHelperTest < HelperTest
 end

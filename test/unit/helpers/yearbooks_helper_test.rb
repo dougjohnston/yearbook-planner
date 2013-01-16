@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class YearbooksHelperTest < IntegrationTest
+class YearbooksHelperTest < HelperTest
 end

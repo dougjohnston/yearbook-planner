@@ -14,10 +14,21 @@ require "turn/autorun"
 
 Turn.config.format = :progress
 
-class UnitTest < ActiveSupport::TestCase
-end
+class UnitTest < ActiveSupport::TestCase; end
+class HelperTest < ActionView::TestCase; end
 
-class IntegrationTest < ActionView::TestCase
+class IntegrationTest < ActionDispatch::IntegrationTest
+  include Warden::Test::Helpers
+  Warden.test_mode!
+
+  def sign_in_user(factory=:user, subdomain='aai')
+    @host = "http://#{subdomain}.test.com"
+
+    user = FactoryGirl.create(factory)
+    login_as(user, :scope => :user)
+    #@current_user = FactoryGirl.create(factory)
+    #sign_in @current_user
+  end
 end
 
 class FunctionalTest < ActionController::TestCase
@@ -29,4 +40,3 @@ class FunctionalTest < ActionController::TestCase
     sign_in @current_user
   end
 end
-

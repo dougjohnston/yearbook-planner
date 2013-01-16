@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class SchoolsHelperTest < IntegrationTest
+class SchoolsHelperTest < HelperTest
 end

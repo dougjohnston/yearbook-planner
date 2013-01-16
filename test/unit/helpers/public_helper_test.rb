@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class PublicHelperTest < IntegrationTest
+class PublicHelperTest < HelperTest
 end

@@ -1,4 +1,4 @@
 require 'minitest_helper'
 
-class SectionsHelperTest < IntegrationTest
+class SectionsHelperTest < HelperTest
 end

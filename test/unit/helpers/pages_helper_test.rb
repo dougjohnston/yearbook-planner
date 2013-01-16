@@ -1,5 +1,5 @@
 require 'minitest_helper'
 
-class PagesHelperTest < IntegrationTest
+class PagesHelperTest < HelperTest
 
 end
