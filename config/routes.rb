@@ -1,5 +1,3 @@
-require 'subdomain'
-
 YearbookPlanner::Application.routes.draw do
   devise_for :users
 
