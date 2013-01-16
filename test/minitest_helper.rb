@@ -1,7 +1,10 @@
 ENV["RAILS_ENV"] = "test"
 require File.expand_path('../../config/environment', __FILE__)
+
+# Minitest
 require "minitest/autorun"
 require "minitest/rails"
+require "minitest/rails/capybara"
 require 'minitest/growl_notify'
 
 # Support
@@ -17,7 +20,7 @@ end
 class IntegrationTest < ActionView::TestCase
 end
 
-class FunctionalTest < MiniTest::Rails::ActionController::TestCase
+class FunctionalTest < ActionController::TestCase
   include Devise::TestHelpers
 
   def sign_in_user(factory=:user, subdomain='aai')

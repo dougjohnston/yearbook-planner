@@ -33,12 +33,17 @@ group :development do
   gem 'binding_of_caller' # support for better_errors
 end
 
+# FOR DEVELOPMENT AND TEST
+group :development, :test do
+  gem "minitest-rails"
+end
+
 # FOR TESTING
 group :test do
-  gem 'minitest-rails'
   gem 'turn'
 
   # Support libraries
+  gem "minitest-rails-capybara"
   gem 'factory_girl_rails'
   gem 'mocha', :require => false
 
