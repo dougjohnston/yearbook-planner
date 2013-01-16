@@ -9,7 +9,7 @@ require "factory_girl_rails"
 require "mocha/setup"
 require "turn/autorun"
 
-Turn.config.format = :outline
+Turn.config.format = :progress
 
 class UnitTest < ActiveSupport::TestCase
 end
