@@ -7,8 +7,8 @@ class YearbookMethodTest < UnitTest
     two = FactoryGirl.create(:old_yearbook, :school => one.school)
     assert_same one.school, two.school
     two.current!
-    assert_equal false, one.reload.current?
-    assert_equal true, two.reload.current?
+    refute one.reload.current?
+    assert two.reload.current?
   end
 
   test "only affects current school" do
@@ -16,7 +16,7 @@ class YearbookMethodTest < UnitTest
     two = FactoryGirl.create(:old_yearbook)
     refute_same one.school, two.school
     one.current! && two.current!
-    assert_equal true, one.reload.current?
-    assert_equal true, two.reload.current?
+    assert one.reload.current?
+    assert two.reload.current?
   end
 end
