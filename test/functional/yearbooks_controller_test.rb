@@ -19,7 +19,7 @@ class YearbooksControllerTest < FunctionalTest
 
   test "should create yearbook" do
     assert_difference('Yearbook.count') do
-      post :create, yearbook: FactoryGirl.attributes_for(:yearbook, :school_id => @yearbook.school.id)
+      post :create, yearbook: FactoryGirl.attributes_for(:old_yearbook, :school_id => @yearbook.school.id)
     end
 
     assert_redirected_to yearbook_path(assigns(:yearbook))

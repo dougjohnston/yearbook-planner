@@ -7,4 +7,12 @@ class School < ActiveRecord::Base
   def current_yearbook
     yearbooks.where(:current => true).first
   end
+
+  def newest_yearbook
+    yearbooks.order('starting_year desc').first
+  end
+
+  def oldest_yearbook
+    yearbooks.order('starting_year asc').first
+  end
 end

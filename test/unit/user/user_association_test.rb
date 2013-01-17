@@ -14,7 +14,7 @@ class UserAssociationTest < UnitTest
 
   test "can belong to many yearbooks" do
     one = FactoryGirl.build(:yearbook)
-    two = FactoryGirl.build(:yearbook)
+    two = FactoryGirl.build(:old_yearbook)
     assert_difference '@user.yearbooks.count', +2 do
       @user.yearbooks << one
       @user.yearbooks << two
