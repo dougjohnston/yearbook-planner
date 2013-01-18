@@ -22,14 +22,7 @@
     <%= yield %>
   </section>
   <footer>
-    <div class='left'>
-      Logged in as <%= link_to current_user.full_name, edit_user_path(current_user.id) %> |
-      <%= link_to "help", events_path %> |
-      <%= link_to "sign out", destroy_user_session_path, :method => :delete  %>
-    </div>
-    <div class='right'>
-      &copy; Copyright <%= Time.now.year %> Doug Johnston. All Rights Reserved.
-    </div>
+    <%= render 'layouts/application/footer' %>
   </footer>
 </body>
 </html>
