@@ -13,7 +13,8 @@ FactoryGirl.define do
     end
 
     factory :random_yearbook do
-      starting_year { Time.now.year + rand(10) }
+      sequence(:starting_year) {|n| Time.now.year + n }
+      #starting_year { Time.now.year + rand(10) }
       ending_year { starting_year + 1 }
     end
   end

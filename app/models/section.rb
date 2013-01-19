@@ -8,4 +8,6 @@ class Section < ActiveRecord::Base
 
   belongs_to :yearbook
   has_many :spreads
+
+  validates :yearbook, :title, :presence => true
 end

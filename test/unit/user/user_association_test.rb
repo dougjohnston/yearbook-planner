@@ -30,7 +30,7 @@ class UserAssociationTest < UnitTest
 
   test "can be assigned many sections" do
     one = FactoryGirl.build(:section)
-    two = FactoryGirl.build(:section)
+    two = FactoryGirl.build(:section, :yearbook => one.yearbook)
     assert_difference '@user.sections.count', +2 do
       @user.sections << one
       @user.sections << two
@@ -46,7 +46,7 @@ class UserAssociationTest < UnitTest
 
   test "can be assigned many spreads" do
     one = FactoryGirl.build(:spread)
-    two = FactoryGirl.build(:spread)
+    two = FactoryGirl.build(:spread, :section => one.section)
     assert_difference '@user.spreads.count', +2 do
       @user.spreads << one
       @user.spreads << two
@@ -62,7 +62,7 @@ class UserAssociationTest < UnitTest
 
   test "can be assigned many pages" do
     one = FactoryGirl.build(:page)
-    two = FactoryGirl.build(:page)
+    two = FactoryGirl.build(:page, :spread => one.spread)
     assert_difference '@user.pages.count', +2 do
       @user.pages << one
       @user.pages << two

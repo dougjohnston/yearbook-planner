@@ -19,7 +19,7 @@ class SectionsControllerTest < FunctionalTest
 
   test "should create section" do
     assert_difference('Section.count') do
-      post :create, section: { position: @section.position, title: @section.title }
+      post :create, section: { yearbook_id: @section.yearbook_id, title: @section.title }
     end
 
     assert_redirected_to section_path(assigns(:section))
