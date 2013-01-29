@@ -1,6 +1,6 @@
 require 'minitest_helper'
 
-class SectionTest < UnitTest
+class SectionAssociationTest < UnitTest
   setup do
     @section = FactoryGirl.create(:section)
   end
@@ -19,5 +19,11 @@ class SectionTest < UnitTest
       @section.users << one
       @section.users << two
     end
+  end
+
+  test "can be assigned to a single deadline" do
+    deadline = FactoryGirl.build(:deadline)
+    @section.deadline = deadline
+    assert_equal deadline, @section.deadline
   end
 end

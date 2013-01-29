@@ -19,4 +19,8 @@ class User < ActiveRecord::Base
   def full_name
     [first_name, last_name].join(' ').chomp(' ')
   end
+
+  def assignments?
+    self.assignments.length > 0
+  end
 end

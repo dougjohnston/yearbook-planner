@@ -19,4 +19,16 @@ class UserMethodTest < UnitTest
     @user.last_name = ''
     assert_equal 'Harry', @user.full_name
   end
+
+  # assignments?
+  test "returns true if the user has any tasks assigned" do
+    @user.assignments << FactoryGirl.create(:assignment)
+    assert_equal 1, @user.assignments.length
+    assert @user.assignments?
+  end
+
+  test "returns false if the user has no tasks assigned" do
+    assert_equal 0, @user.assignments.length
+    refute @user.assignments?
+  end
 end

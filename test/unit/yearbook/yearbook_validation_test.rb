@@ -17,8 +17,14 @@ class YearbookValidationTest < UnitTest
   end
 
   test "requires a unique starting year" do
+    school = FactoryGirl.create(:school)
+    FactoryGirl.create(:yearbook, :school => school, :starting_year => 2012)
+    refute FactoryGirl.build(:yearbook, :school => school, :starting_year => 2012).valid?
+  end
+
+  test "ignores other school's yearbooks" do
     FactoryGirl.create(:yearbook, :starting_year => 2012)
-    refute FactoryGirl.build(:yearbook, :starting_year => 2012).valid?
+    assert FactoryGirl.build(:yearbook_with_other_school, :starting_year => 2012).valid?
   end
 
   test "requires a valid starting year" do

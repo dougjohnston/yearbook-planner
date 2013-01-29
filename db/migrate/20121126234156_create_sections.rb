@@ -2,6 +2,7 @@ class CreateSections < ActiveRecord::Migration
   def change
     create_table :sections do |t|
       t.references :yearbook
+      t.references :deadline
       t.string :title
       t.integer :pages
       t.integer :position

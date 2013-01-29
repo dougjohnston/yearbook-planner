@@ -7,5 +7,6 @@ class Spread < ActiveRecord::Base
   has_many :users, :through => :assignments
 
   belongs_to :section
+  belongs_to :deadline
   has_many :pages
 end

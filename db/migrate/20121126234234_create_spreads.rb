@@ -2,6 +2,7 @@ class CreateSpreads < ActiveRecord::Migration
   def change
     create_table :spreads do |t|
       t.references :section
+      t.references :deadline
       t.integer :position
 
       t.timestamps

@@ -7,4 +7,5 @@ class Page < ActiveRecord::Base
   has_many :users, :through => :assignments
   
   belongs_to :spread
+  belongs_to :deadline
 end

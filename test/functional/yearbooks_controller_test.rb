@@ -36,7 +36,7 @@ class YearbooksControllerTest < FunctionalTest
   end
 
   test "should update yearbook" do
-    put :update, id: @yearbook, yearbook: { title: @yearbook.title }
+    put :update, id: @yearbook, yearbook: { theme: @yearbook.theme }
     assert_redirected_to yearbook_path(assigns(:yearbook))
   end
 

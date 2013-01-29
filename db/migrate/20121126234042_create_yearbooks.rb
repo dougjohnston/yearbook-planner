@@ -5,7 +5,6 @@ class CreateYearbooks < ActiveRecord::Migration
       t.boolean :current, :default => false
       t.integer :starting_year
       t.integer :ending_year
-      t.string :title
       t.string :theme
 
       t.timestamps

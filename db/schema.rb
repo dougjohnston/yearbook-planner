@@ -52,6 +52,7 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
 
   create_table "pages", :force => true do |t|
     t.integer  "spread_id"
+    t.integer  "deadline_id"
     t.string   "title"
     t.boolean  "left"
     t.integer  "page_number"
@@ -72,6 +73,7 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
 
   create_table "sections", :force => true do |t|
     t.integer  "yearbook_id"
+    t.integer  "deadline_id"
     t.string   "title"
     t.integer  "pages"
     t.integer  "position"
@@ -88,9 +90,10 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
 
   create_table "spreads", :force => true do |t|
     t.integer  "section_id"
+    t.integer  "deadline_id"
     t.integer  "position"
-    t.datetime "created_at", :null => false
-    t.datetime "updated_at", :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   add_index "spreads", ["section_id"], :name => "index_spreads_on_section_id"
@@ -130,7 +133,6 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
     t.boolean  "current",       :default => false
     t.integer  "starting_year"
     t.integer  "ending_year"
-    t.string   "title"
     t.string   "theme"
     t.datetime "created_at",                       :null => false
     t.datetime "updated_at",                       :null => false

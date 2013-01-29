@@ -1,4 +1,28 @@
 <% title "Assignments" %>
 
 <h1>Assignments for <%= current_user.full_name %></h1>
-This is a list of assignments.
+
+<div class="row-fluid">
+  <article class="span6">
+    <h2>Spreads/Pages</h2>
+    <% if current_user.spreads %>
+      <% current_user.spreads.each do |a| %>
+        <% a.pages.each do |page| %>
+          <p><%= page.title %></p>
+        <% end %>
+      <% end %>
+    <% else %>
+      <p>You have not been assigned any spreads.</p>
+    <% end %>
+  </article>
+  <article class="span6">
+    <h2>Event Coverage</h2>
+    <% if current_user.events %>
+      <% current_user.events.each do |a| %>
+        <%= debug a %>
+      <% end %>
+    <% else %>
+      <p>You have not been assigned any events.</p>
+    <% end %>
+  </article>
+</div>

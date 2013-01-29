@@ -7,6 +7,7 @@ class Section < ActiveRecord::Base
   has_many :users, :through => :assignments
 
   belongs_to :yearbook
+  belongs_to :deadline
   has_many :spreads
 
   validates :yearbook, :title, :presence => true
