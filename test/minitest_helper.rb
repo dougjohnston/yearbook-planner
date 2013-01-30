@@ -12,7 +12,8 @@ require "factory_girl_rails"
 require "mocha/setup"
 require "turn/autorun"
 
-Turn.config.format = :progress
+Turn.config.format = :dot
+Turn.config.verbose = true
 
 # Simplified class names
 class UnitTest < ActiveSupport::TestCase; end

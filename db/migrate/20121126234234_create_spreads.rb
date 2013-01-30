@@ -3,15 +3,13 @@ class CreateSpreads < ActiveRecord::Migration
     create_table :spreads do |t|
       t.references :section
       t.references :deadline
+      t.string :title
+      t.text :description
       t.integer :position
+      t.boolean :split
 
       t.timestamps
     end
-
-    #create_table :spreads_users do |t|
-      #t.references :spread
-      #t.references :user
-    #end
 
     add_index :spreads, :section_id
   end

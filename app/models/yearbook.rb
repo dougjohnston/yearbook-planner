@@ -4,6 +4,7 @@ class Yearbook < ActiveRecord::Base
   belongs_to :school
   has_and_belongs_to_many :users
   has_many :sections
+  has_many :deadlines
 
   before_create :make_first_yearbook_current
 

@@ -4,15 +4,10 @@ class CreatePages < ActiveRecord::Migration
       t.references :spread
       t.references :deadline
       t.string :title
-      t.boolean :left
-      t.integer :page_number
+      t.text :description
+      t.boolean :left, :default => false
 
       t.timestamps
     end
-
-    #create_table :pages_users do |t|
-      #t.references :page
-      #t.references :user
-    #end
   end
 end

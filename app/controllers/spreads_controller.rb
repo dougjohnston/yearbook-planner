@@ -85,6 +85,6 @@ class SpreadsController < ApplicationController
 
   private
   def spread_params
-    params.require(:spread).permit(:position)
+    params.require(:spread).permit(:title, :position)
   end
 end

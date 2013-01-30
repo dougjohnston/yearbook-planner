@@ -19,7 +19,7 @@ class SpreadsControllerTest < FunctionalTest
 
   test "should create spread" do
     assert_difference('Spread.count') do
-      post :create, spread: { position: @spread.position }
+      post :create, spread: { title: @spread.title, position: @spread.position }
     end
 
     assert_redirected_to spread_path(assigns(:spread))

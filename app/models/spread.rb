@@ -9,4 +9,15 @@ class Spread < ActiveRecord::Base
   belongs_to :section
   belongs_to :deadline
   has_many :pages
+
+  validates :title, :presence => true
+
+  after_create :create_pages
+
+  private
+  def create_pages
+    one = Page.create(:left => true)
+    two = Page.create
+    self.pages << [one,two]
+  end
 end

@@ -54,8 +54,8 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
     t.integer  "spread_id"
     t.integer  "deadline_id"
     t.string   "title"
+    t.text     "description"
     t.boolean  "left"
-    t.integer  "page_number"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
@@ -91,7 +91,10 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
   create_table "spreads", :force => true do |t|
     t.integer  "section_id"
     t.integer  "deadline_id"
+    t.string   "title"
+    t.text     "description"
     t.integer  "position"
+    t.boolean  "split"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end

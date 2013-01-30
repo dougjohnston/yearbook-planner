@@ -29,13 +29,15 @@ end
 
 # FOR DEVELOPMENT
 group :development do
+  gem 'puma' # faster dev server
   gem 'better_errors' # prettier and more functional error pages
   gem 'binding_of_caller' # support for better_errors
+  gem 'quiet_assets' # stop the torrent of asset log entries
 end
 
 # FOR DEVELOPMENT AND TEST
 group :development, :test do
-  gem "minitest-rails"
+  gem 'minitest-rails'
 end
 
 # FOR TESTING
