@@ -55,9 +55,9 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
     t.integer  "deadline_id"
     t.string   "title"
     t.text     "description"
-    t.boolean  "left"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.boolean  "left",        :default => false
+    t.datetime "created_at",                     :null => false
+    t.datetime "updated_at",                     :null => false
   end
 
   create_table "schools", :force => true do |t|

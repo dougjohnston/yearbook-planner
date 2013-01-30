@@ -6,5 +6,9 @@ FactoryGirl.define do
     last_name "Truman"
     password "password"
     password_confirmation "password"
+
+    factory :complete_user do
+      association :school, :factory => :school_with_yearbooks 
+    end
   end
 end

@@ -10,7 +10,7 @@ class Spread < ActiveRecord::Base
   belongs_to :deadline
   has_many :pages
 
-  validates :title, :presence => true
+  validates :title, :presence => true, :unless => :split?
 
   after_create :create_pages
 

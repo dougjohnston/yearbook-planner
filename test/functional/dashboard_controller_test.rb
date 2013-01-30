@@ -2,8 +2,9 @@ require 'minitest_helper'
 
 class DashboardControllerTest < FunctionalTest
   setup do
-    sign_in_user
+    sign_in_user(:complete_user)
   end
+
   test "should route to the dashboard" do
     assert_routing "http://aai.test.com/dashboard", :controller => "dashboard", :action => "show"
   end
@@ -25,9 +26,14 @@ class DashboardControllerTest < FunctionalTest
     assert_response :success
   end
 
-  test "should set school based on subdomain" do
+  test "should set current school based on subdomain" do
     get :show
-    assert_equal 'aai', assigns(:school)['subdomain']
+    assert_equal 'aai', assigns[:current_school]['subdomain']
+  end
+
+  test "should set current yearbook based on school" do
+    get :show
+    assert_equal 'Survivors', assigns[:current_yearbook]['theme']
   end
 
   test "should raise a routing error if the school is unknown" do

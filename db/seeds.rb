@@ -15,7 +15,7 @@ School.all.each do |school|
   Yearbook.create!(school: school, starting_year: Time.now.year - 2, ending_year: Time.now.year - 1, theme: "Forever")
 
   # Fill each yearbook with some stuff
-  Yearbook.all.each do |yb|
+  school.yearbooks.all.each do |yb|
     # Create two deadlines
     Deadline.create!(yearbook: yb, title: "First Deadline", description: "Our first deadline", due_date: Time.now + 10.days)
     Deadline.create!(yearbook: yb, title: "Second Deadline", description: "Our second deadline", due_date: Time.now + 50.days)

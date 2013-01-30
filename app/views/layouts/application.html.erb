@@ -14,7 +14,7 @@
       <%= link_to "help", events_path %> |
       <%= link_to "sign out", destroy_user_session_path, :method => :delete  %>
     </nav>
-    <h1><%= @school.short_name %> Yearbook Planner</h1>
+    <h1><%= current_school.short_name %> Yearbook Planner</h1>
     <%= render 'layouts/application/navigation' %>
   </header>
   <section id="main" class="container-fluid">

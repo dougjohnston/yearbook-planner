@@ -3,11 +3,19 @@ class ApplicationController < ActionController::Base
 
   protect_from_forgery
 
-  before_filter :find_school_by_subdomain
+  before_filter :set_instance_variables
+
+  def current_school
+    @current_school ||= find_school
+  end
+
+  def current_yearbook
+    @current_yearbook ||= find_yearbook
+  end
 
   protected
   def layout_by_resource
-    if request.subdomain == 'www'
+    if public_site?
       'public'
     elsif devise_controller?
       'authentication'
@@ -17,15 +25,30 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  def find_school_by_subdomain
-    find_school unless request.subdomain == 'www'
+  def set_instance_variables
+    unless public_site?
+      current_school
+      current_yearbook
+    end
   end
 
+  def public_site?
+    request.subdomain == 'www'
+  end
+
+  #def find_school_by_subdomain
+    #find_school unless request.subdomain == 'www'
+  #end
+
   def find_school
-    @school = School.where(:subdomain => request.subdomain).first || school_not_found
+    School.where(:subdomain => request.subdomain).first || school_not_found
+  end
+
+  def find_yearbook
+    current_school.current_yearbook || nil
   end
 
   def school_not_found
-    raise ActionController::RoutingError.new('School Not Found')
+    raise ActionController::RoutingError.new('Current School Not Found')
   end
 end
