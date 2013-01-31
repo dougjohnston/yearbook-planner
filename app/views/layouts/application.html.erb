@@ -18,8 +18,16 @@
     <%= render 'layouts/application/navigation' %>
   </header>
   <section id="main" class="container-fluid">
-    <%= render 'shared/notices' %>
-    <%= yield %>
+    <div class="row-fluid">
+      <nav class="span2" id="nav-assignments">
+        <h3>My Assignments</h3>
+        <%= render 'assignments/list' %>
+      </nav>
+      <div class="span10">
+        <%= render 'shared/notices' %>
+        <%= yield %>
+      </div>
+    <div>
   </section>
   <footer>
     <%= render 'layouts/application/footer' %>
