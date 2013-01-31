@@ -7,6 +7,7 @@ class CreateAssignments < ActiveRecord::Migration
       t.string :assignable_type
       t.boolean :completed
       t.datetime :completed_at
+      t.boolean :approved
       t.integer :approved_by
       t.datetime :approved_at
 

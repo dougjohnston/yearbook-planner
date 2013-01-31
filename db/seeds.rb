@@ -24,22 +24,27 @@ School.all.each do |school|
     titles = %w(Elementary Seniors Athletics Academics Events)
     titles.shuffle.each_with_index do |title, i|
       section = Section.create!(yearbook: yb, title: title, position: i+1)
+      section.assign_to(User.order('rand()').first)
 
       # Create some spreads with individual pages
       3.times do |j|
-        spread = Spread.create!(section: section, position: i+j, split: true)
-        p1 = Page.create!(spread: spread, title: "Test Page ##{i+j*2-1}")
-        p2 = Page.create!(spread: spread, title: "Test Page ##{i+j*2}")
-        spread.assign_to(User.order('rand()').first)
-        p1.deadline = yb.deadlines.order('rand()').first
-        p1.deadline = yb.deadlines.order('rand()').first
+        user = school.users.order('rand()').first
+        user2 = school.users.order('rand()').first
+        deadline = yb.deadlines.order('rand()').first
+        spread = Spread.create!(section: section, deadline: deadline, position: i+j, split: true)
+        p1 = Page.create!(spread: spread, deadline: deadline, title: "#{section} Test Page ##{i+j}")
+        p2 = Page.create!(spread: spread, deadline: deadline, title: "#{section} Test Page ##{i+j}")
+        spread.assign_to(user)
+        p1.assign_to(user)
+        p2.assign_to(user2)
       end
 
       # Create some spreads with joined pages
       3.times do |j|
-        spread = Spread.create!(section: section, title: "#{title} Spread ##{i+j}", position: i+j)
-        spread.assign_to(User.order('rand()').first)
-        spread.deadline = yb.deadlines.order('rand()').first
+        user = school.users.order('rand()').first
+        deadline = yb.deadlines.order('rand()').first
+        spread = Spread.create!(section: section, deadline: deadline, title: "#{title} Spread ##{i+j}", position: i+j)
+        spread.assign_to(user)
       end
     end
   end

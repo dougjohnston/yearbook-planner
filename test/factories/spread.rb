@@ -1,8 +1,11 @@
 FactoryGirl.define do
   factory :spread do
     association :section
-    association :deadline
     title "9th Grade"
     split false
+
+    factory :spread_with_deadline do
+      association :deadline
+    end
   end
 end
