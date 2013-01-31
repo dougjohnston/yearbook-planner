@@ -24,5 +24,14 @@
   <footer>
     <%= render 'layouts/application/footer' %>
   </footer>
+
+  <%= content_for :javascript %>
+  <% if content_for?(:jquery) %>
+    <script type="text/javascript">
+      $(function() {
+        <%= content_for :jquery %>
+      });
+    </script>
+  <% end %>
 </body>
 </html>
