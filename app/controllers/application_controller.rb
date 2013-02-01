@@ -36,10 +36,6 @@ class ApplicationController < ActionController::Base
     request.subdomain == 'www'
   end
 
-  #def find_school_by_subdomain
-    #find_school unless request.subdomain == 'www'
-  #end
-
   def find_school
     School.where(:subdomain => request.subdomain).first || school_not_found
   end

@@ -8,7 +8,7 @@ FactoryGirl.define do
     password_confirmation "password"
 
     factory :complete_user do
-      association :school, :factory => :school_with_yearbooks 
+      association :school, :factory => :school_with_yearbook 
     end
   end
 end

@@ -14,11 +14,13 @@ FactoryGirl.define do
       country "United States"
     end
 
-    factory :school_with_yearbooks do
-      #ignore do
-        #yearbooks_count 2
-      #end
+    factory :school_with_yearbook do
+      after(:create) do |school, evaluator|
+        FactoryGirl.create(:yearbook, school: school)
+      end
+    end
 
+    factory :school_with_yearbooks do
       after(:create) do |school, evaluator|
         FactoryGirl.create(:yearbook, school: school)
         FactoryGirl.create(:old_yearbook, school: school)
