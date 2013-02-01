@@ -53,12 +53,10 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
 
   create_table "pages", :force => true do |t|
     t.integer  "spread_id"
-    t.integer  "deadline_id"
     t.string   "title"
     t.text     "description"
-    t.boolean  "left",        :default => false
-    t.datetime "created_at",                     :null => false
-    t.datetime "updated_at",                     :null => false
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
   end
 
   create_table "schools", :force => true do |t|
@@ -77,9 +75,9 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
     t.integer  "deadline_id"
     t.string   "title"
     t.integer  "pages"
-    t.integer  "position"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "section_order"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "sections", ["yearbook_id"], :name => "index_sections_on_yearbook_id"
@@ -92,12 +90,15 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
   create_table "spreads", :force => true do |t|
     t.integer  "section_id"
     t.integer  "deadline_id"
+    t.integer  "left_page_id"
+    t.integer  "right_page_id"
     t.string   "title"
     t.text     "description"
-    t.integer  "position"
-    t.boolean  "split"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.integer  "spread_order"
+    t.integer  "left_page"
+    t.integer  "right_page"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   add_index "spreads", ["section_id"], :name => "index_spreads_on_section_id"

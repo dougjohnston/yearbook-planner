@@ -15,15 +15,10 @@ class SpreadValidationTest < UnitTest
     refute @spread.valid?
   end
 
-  test "is valid without a title if it's a split spread" do
-    @spread.title = nil
-    @spread.split = true
-    assert @spread.valid?
-  end
-
   # pages
   test "spawns two pages when created" do
     spread = FactoryGirl.create(:spread)
-    assert_equal 2, spread.pages.count
+    assert spread.left_page
+    assert spread.right_page
   end
 end

@@ -20,10 +20,4 @@ class PageAssociationTest < UnitTest
       @page.users << two
     end
   end
-
-  test "can be assigned to a single deadline" do
-    deadline = FactoryGirl.build(:deadline)
-    @page.deadline = deadline
-    assert_equal deadline, @page.deadline
-  end
 end

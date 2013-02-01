@@ -5,7 +5,7 @@ class CreateSections < ActiveRecord::Migration
       t.references :deadline
       t.string :title
       t.integer :pages
-      t.integer :position
+      t.integer :section_order
 
       t.timestamps
     end

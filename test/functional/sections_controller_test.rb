@@ -36,7 +36,7 @@ class SectionsControllerTest < FunctionalTest
   end
 
   test "should update section" do
-    put :update, id: @section, section: { position: @section.position, title: @section.title }
+    put :update, id: @section, section: { title: @section.title }
     assert_redirected_to section_path(assigns(:section))
   end
 

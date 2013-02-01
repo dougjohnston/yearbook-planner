@@ -19,7 +19,7 @@ class SpreadsControllerTest < FunctionalTest
 
   test "should create spread" do
     assert_difference('Spread.count') do
-      post :create, spread: { title: @spread.title, position: @spread.position }
+      post :create, spread: { title: @spread.title }
     end
 
     assert_redirected_to spread_path(assigns(:spread))
@@ -36,7 +36,7 @@ class SpreadsControllerTest < FunctionalTest
   end
 
   test "should update spread" do
-    put :update, id: @spread, spread: { position: @spread.position }
+    put :update, id: @spread, spread: { title: "A New Title" }
     assert_redirected_to spread_path(assigns(:spread))
   end
 

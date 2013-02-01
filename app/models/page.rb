@@ -6,6 +6,6 @@ class Page < ActiveRecord::Base
   has_many :assignments, :as => :assignable
   has_many :users, :through => :assignments
   
-  belongs_to :spread
+  has_one :spread
   belongs_to :deadline
 end
