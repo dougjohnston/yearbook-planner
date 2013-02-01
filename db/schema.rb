@@ -55,8 +55,9 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
     t.integer  "spread_id"
     t.string   "title"
     t.text     "description"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.boolean  "blank",       :default => true
+    t.datetime "created_at",                    :null => false
+    t.datetime "updated_at",                    :null => false
   end
 
   create_table "schools", :force => true do |t|
