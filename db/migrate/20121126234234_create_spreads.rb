@@ -8,8 +8,6 @@ class CreateSpreads < ActiveRecord::Migration
       t.string :title
       t.text :description
       t.integer :spread_order
-      t.integer :left_page
-      t.integer :right_page
 
       t.timestamps
     end

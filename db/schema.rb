@@ -95,8 +95,6 @@ ActiveRecord::Schema.define(:version => 20121217011100) do
     t.string   "title"
     t.text     "description"
     t.integer  "spread_order"
-    t.integer  "left_page"
-    t.integer  "right_page"
     t.datetime "created_at",    :null => false
     t.datetime "updated_at",    :null => false
   end

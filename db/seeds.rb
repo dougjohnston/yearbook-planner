@@ -31,8 +31,8 @@ School.all.each do |school|
         user = school.users.order('rand()').first
         deadline = yb.deadlines.order('rand()').first
         spread = Spread.create!(section: section, deadline: deadline, title: "#{title} Spread ##{i+j}", spread_order: i+j)
-        spread.left_page.update_attribute(:title, "#{section} Test Page ##{i+j}")
-        spread.right_page.update_attribute(:title, "#{section} Test Page ##{i+j+1}")
+        spread.left_page.update_attribute(:title, "#{title} Test Page ##{i+j}")
+        spread.right_page.update_attribute(:title, "#{title} Test Page ##{i+j+1}")
         spread.assign_to(user)
       end
     end
