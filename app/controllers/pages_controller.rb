@@ -85,6 +85,6 @@ class PagesController < ApplicationController
 
   private
   def page_params
-    params.require(:page).permit(:spread_id, :title)
+    params.require(:page).permit(:spread_id, :title, :blank)
   end
 end

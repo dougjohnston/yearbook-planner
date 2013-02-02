@@ -21,4 +21,10 @@ class PageValidationTest < UnitTest
     @page.blank = true
     assert @page.valid?
   end
+
+  # blank
+  test "is invalid if it's a blank page with a title" do
+    @page.blank = true
+    refute @page.valid?
+  end
 end

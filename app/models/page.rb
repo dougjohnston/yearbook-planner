@@ -9,9 +9,6 @@ class Page < ActiveRecord::Base
   has_one :spread
   belongs_to :deadline
 
-  validates :title, :presence => true, :unless => :blank_page?
-
-  def blank_page?
-    self.blank == true
-  end
+  validates :title, :presence => true, :unless => :blank?
+  validates :blank, :inclusion => { :in => [false] }, :if => :title?
 end

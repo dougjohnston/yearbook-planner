@@ -19,7 +19,7 @@ class PagesControllerTest < FunctionalTest
 
   test "should create page" do
     assert_difference('Page.count') do
-      post :create, page: { title: @page.title }
+      post :create, page: { title: @page.title, :blank => false }
     end
 
     assert_redirected_to page_path(assigns(:page))
