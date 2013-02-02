@@ -45,6 +45,10 @@ class ApplicationController < ActionController::Base
   end
 
   def school_not_found
-    raise ActionController::RoutingError.new('Current School Not Found')
+    if Rails.env == 'development'
+      School.where(:subdomain => 'aai').first
+    else
+      raise ActionController::RoutingError.new('Current School Not Found')
+    end
   end
 end

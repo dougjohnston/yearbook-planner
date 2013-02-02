@@ -1,5 +1,9 @@
 class Subdomain
   def self.matches?(request)
-    request.subdomain.present? && request.subdomain != 'www'
+    if request.host =~ /localhost/ and Rails.env == 'development'
+      true
+    else
+      request.subdomain.present? && request.subdomain != 'www'
+    end
   end
 end
