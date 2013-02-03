@@ -217,7 +217,7 @@ DEPENDENCIES
   mysql2
   puma
   quiet_assets
-  rails (= 3.2.11)
+  rails
   ranked-model
   rb-fsevent (~> 0.9.1)
   sass-rails (~> 3.2.3)
