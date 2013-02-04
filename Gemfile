@@ -19,7 +19,6 @@ gem 'jquery-rails'
 gem 'active_link_to'
 
 # JavaScript / Backbone
-gem 'rails-backbone'
 
 # FOR ASSETS
 group :assets do
