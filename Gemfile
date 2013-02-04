@@ -18,6 +18,8 @@ gem 'ranked-model'
 gem 'jquery-rails'
 gem 'active_link_to'
 
+# JavaScript / Backbone
+gem 'rails-backbone'
 
 # FOR ASSETS
 group :assets do
@@ -38,6 +40,7 @@ end
 # FOR DEVELOPMENT AND TEST
 group :development, :test do
   gem 'minitest-rails'
+  gem 'jasminerice'
 end
 
 # FOR TESTING

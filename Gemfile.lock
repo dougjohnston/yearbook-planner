@@ -59,6 +59,7 @@ GEM
       orm_adapter (~> 0.1)
       railties (~> 3.1)
       warden (~> 1.2.1)
+    ejs (1.0.0)
     erubis (2.7.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
@@ -77,8 +78,12 @@ GEM
       thor (>= 0.14.6)
     guard-minitest (0.5.0)
       guard (>= 0.4)
+    haml (3.1.7)
     hike (1.2.1)
     i18n (0.6.1)
+    jasminerice (0.0.10)
+      coffee-rails
+      haml
     journey (1.0.4)
     jquery-rails (2.2.0)
       railties (>= 3.0, < 5.0)
@@ -141,6 +146,10 @@ GEM
       activesupport (= 3.2.11)
       bundler (~> 1.0)
       railties (= 3.2.11)
+    rails-backbone (0.7.2)
+      coffee-script (~> 2.2.0)
+      ejs (~> 1.0.0)
+      railties (>= 3.1.0)
     railties (3.2.11)
       actionpack (= 3.2.11)
       activesupport (= 3.2.11)
@@ -209,6 +218,7 @@ DEPENDENCIES
   factory_girl_rails
   guard
   guard-minitest
+  jasminerice
   jquery-rails
   minitest-growl
   minitest-rails
@@ -218,6 +228,7 @@ DEPENDENCIES
   puma
   quiet_assets
   rails
+  rails-backbone
   ranked-model
   rb-fsevent (~> 0.9.1)
   sass-rails (~> 3.2.3)
