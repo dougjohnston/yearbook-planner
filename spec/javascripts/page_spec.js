@@ -21,7 +21,7 @@ describe("YB.Collections.Pages", function() {
     var pages = new YB.Collections.Pages();
 
     it("should have default attributes", function() {
-      expect(pages[0].url).toEqual("/pages");
+      expect(pages.model).toEqual(YB.Models.Page);
     });
   });
 });
