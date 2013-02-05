@@ -2,9 +2,7 @@
 <html>
 <head>
   <title><%= application_layout_title %></title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-
-  <%#= render 'layouts/application/cdn_javascript' %>
+  <%= stylesheet_link_tag "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
 
   <%= csrf_meta_tags %>
@@ -35,11 +33,11 @@
     <%= render 'layouts/application/footer' %>
   </footer>
 
-  <%= content_for :javascript %>
+  <%= yield :javascript %>
   <% if content_for?(:jquery) %>
     <script type="text/javascript">
       $(function() {
-        <%= content_for :jquery %>
+        <%= yield :jquery %>
       });
     </script>
   <% end %>
