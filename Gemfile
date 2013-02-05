@@ -39,7 +39,7 @@ end
 # FOR DEVELOPMENT AND TEST
 group :development, :test do
   gem 'minitest-rails'
-  gem 'jasminerice'
+  gem 'jasmine'
 end
 
 # FOR TESTING
