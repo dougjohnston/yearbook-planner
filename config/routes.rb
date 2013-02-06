@@ -6,25 +6,23 @@ YearbookPlanner::Application.routes.draw do
   # Make each resource available directly
   resources :schools
   resources :users
-  resources :assignments
-  resources :yearbooks
-  resources :deadlines
-  resources :events
-  resources :sections
-  resources :spreads
-  resources :pages
+  resources :assignments, :deadlines, :events
+  resources :sections, :spreads, :pages
 
   resources :ladders
 
-  #resources :yearbooks do
-    #resources :deadlines
-    #resources :events
-    #resources :sections
-    #resources :spreads
-    #resources :pages
-  #end
+  resources :yearbooks, :shallow => true do
+    resources :assignments, :deadlines, :events
+    resources :sections do
+      resources :spreads do
+        resources :pages
+      end
+    end
+  end
 
+  resource :configuration, :controller => 'configuration'
   resource :dashboard, :controller => 'dashboard'
+  resource :static, :controller => 'static'
 
   constraints(Subdomain) do
     match '/' => 'dashboard#show'

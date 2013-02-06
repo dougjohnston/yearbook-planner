@@ -12,7 +12,7 @@
     <nav id="nav-utility">
       <%= current_user.full_name %> |
       <%= link_to "profile", edit_user_path(current_user.id) %> |
-      <%= link_to "help", events_path %> |
+      <%= link_to "help", static_path(:page => :help) %> |
       <%= link_to "sign out", destroy_user_session_path, :method => :delete  %>
     </nav>
     <h1><%= current_school.short_name %> Yearbook Planner</h1>
