@@ -1,4 +1,6 @@
 YearbookPlanner::Application.routes.draw do
+  get "ladder/index"
+
   devise_for :users
 
   # Make each resource available directly
@@ -11,6 +13,8 @@ YearbookPlanner::Application.routes.draw do
   resources :sections
   resources :spreads
   resources :pages
+
+  resources :ladders
 
   #resources :yearbooks do
     #resources :deadlines

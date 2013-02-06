@@ -7,31 +7,7 @@
   $('#deadline-tabs a:first').tab('show');
 <% end %>
 
-<h3><%= current_yearbook.starting_year %> - <%= current_yearbook.ending_year %> Ladder</h3>
-<ul class="ladder">
-  <% page_number = 0 %>
-  <% current_yearbook.sections.each do |section| %>
-    <%#<li class="ladder-header"><%= section.title </li>%>
-    <% section.spreads.each do |spread| %>
-      <li class="ladder-row">
-        <div class="ladder-node left-page">
-          <%= link_to spread.left_page.title, "#" %>
-        </div>
-        <div class="ladder-node left-page-number">
-          <%= page_number += 1 %>
-        </div>
-        <div class="ladder-node right-page-number">
-          <%= page_number += 1 %>
-        </div>
-        <div class="ladder-node right-page">
-          <%= link_to spread.right_page.title, "#" %>
-        </div>
-      </li>
-    <% end %>
-  <% end %>
-</ul>
 
-<!--
 <ul class="nav nav-list">
   <li class="nav-header">Events</li>
   <% current_yearbook.deadlines.each_with_index do |deadline, i| %>
@@ -62,4 +38,4 @@
     </div>
   <% end %>
 </div>
--->
+
