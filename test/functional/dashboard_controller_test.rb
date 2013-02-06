@@ -9,13 +9,13 @@ class DashboardControllerTest < FunctionalTest
     assert_routing "http://aai.test.com/dashboard", :controller => "dashboard", :action => "show"
   end
 
-  test "should redirect anonymous visitor" do
+  test "should redirect anonymous visitor with a subdomain" do
     sign_out @current_user
-    request.host = 'www.test.com'
+    request.host = 'aai.test.com'
 
     get :show
-    assert_nil assigns(:school)
-    assert_equal 'www', request.subdomain
+    assert_nil assigns(:current_school)
+    assert_equal 'aai', request.subdomain
 
     assert_response :redirect
     assert_redirected_to :new_user_session

@@ -9,6 +9,7 @@ class PublicControllerTest < FunctionalTest
     assert_equal 'www', request.subdomain
 
     assert_response :success
+    assert_template :index
   end
 
   test "should raise a routing error if the school is unknown" do

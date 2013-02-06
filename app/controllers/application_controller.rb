@@ -1,8 +1,9 @@
 class ApplicationController < ActionController::Base
-  layout :layout_by_resource
-
   protect_from_forgery
 
+  layout :layout_by_resource
+
+  before_filter :authenticate
   before_filter :set_instance_variables
 
   def current_school
@@ -25,6 +26,12 @@ class ApplicationController < ActionController::Base
   end
 
   private
+  def authenticate
+    unless public_site?
+      authenticate_user! 
+    end
+  end
+
   def set_instance_variables
     unless public_site?
       current_school

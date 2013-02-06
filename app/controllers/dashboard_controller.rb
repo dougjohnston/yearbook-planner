@@ -1,6 +1,4 @@
 class DashboardController < ApplicationController
-  before_filter :authenticate_user!
-
   def show
     #flash[:notice] = "This is a basic notice"
     #flash[:info] = "This is a basic info notice"
