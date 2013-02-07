@@ -1,25 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>School:</b>
-  <%= @yearbook.school %>
-</p>
-
-<p>
-  <b>Starting year:</b>
-  <%= @yearbook.starting_year %>
-</p>
-
-<p>
-  <b>Ending year:</b>
-  <%= @yearbook.ending_year %>
-</p>
-
-<p>
-  <b>Theme:</b>
-  <%= @yearbook.theme %>
-</p>
-
-
-<%= link_to 'Edit', edit_yearbook_path(@yearbook) %> |
-<%= link_to 'Back', yearbooks_path %>
+<h3><%= current_yearbook.starting_year %> - <%= current_yearbook.ending_year %> Ladder</h3>
+<ul class="ladder">
+  <% page_number = 0 %>
+  <% current_yearbook.sections.each do |section| %>
+    <%#<li class="ladder-header"><%= section.title </li>%>
+    <% section.spreads.each do |spread| %>
+      <li class="ladder-row">
+        <div class="ladder-node left-page">
+          <%= link_to spread.left_page.title, "#" %>
+        </div>
+        <div class="ladder-node left-page-number">
+          <%= page_number += 1 %>
+        </div>
+        <div class="ladder-node right-page-number">
+          <%= page_number += 1 %>
+        </div>
+        <div class="ladder-node right-page">
+          <%= link_to spread.right_page.title, "#" %>
+        </div>
+      </li>
+    <% end %>
+  <% end %>
+</ul>

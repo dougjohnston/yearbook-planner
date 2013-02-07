@@ -9,8 +9,6 @@ YearbookPlanner::Application.routes.draw do
   resources :assignments, :deadlines, :events
   resources :sections, :spreads, :pages
 
-  resources :ladders
-
   resources :yearbooks, :shallow => true do
     resources :assignments, :deadlines, :events
     resources :sections do
