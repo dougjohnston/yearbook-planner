@@ -12,7 +12,7 @@ require "factory_girl_rails"
 require "mocha/setup"
 require "turn/autorun"
 
-Turn.config.format = :dot
+Turn.config.format = :progress
 
 # Simplified class names
 class UnitTest < ActiveSupport::TestCase; end
@@ -27,8 +27,8 @@ class IntegrationTest < ActionDispatch::IntegrationTest
 
   def sign_in_user(factory=:complete_user, subdomain='aai')
     @host = "http://#{subdomain}.test.com"
-    user = FactoryGirl.create(factory)
-    login_as(user, :scope => :user)
+    @current_user = FactoryGirl.create(factory)
+    login_as(@current_user, :scope => :user)
   end
 end
 
@@ -39,5 +39,9 @@ class FunctionalTest < ActionController::TestCase
     request.host = "#{subdomain}.test.com"
     @current_user = FactoryGirl.create(factory)
     sign_in @current_user
+  end
+
+  def force_logout
+    request.env['warden'].logout
   end
 end

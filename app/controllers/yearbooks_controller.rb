@@ -1,6 +1,4 @@
 class YearbooksController < ApplicationController
-  before_filter :authenticate_user!
-  
   # GET /yearbooks
   # GET /yearbooks.json
   def index
@@ -15,7 +13,7 @@ class YearbooksController < ApplicationController
   # GET /yearbooks/1
   # GET /yearbooks/1.json
   def show
-    @yearbook = Yearbook.find(params[:id])
+    @yearbook = current_yearbook
 
     respond_to do |format|
       format.html # show.html.erb

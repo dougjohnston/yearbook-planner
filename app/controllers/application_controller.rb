@@ -3,8 +3,8 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  before_filter :authenticate
-  before_filter :set_instance_variables
+  before_filter :authenticate_user!, :unless => :public_site?
+  before_filter :set_instance_variables, :unless => :public_site?
 
   def current_school
     @current_school ||= find_school
@@ -26,21 +26,13 @@ class ApplicationController < ActionController::Base
   end
 
   private
-  def authenticate
-    unless public_site?
-      authenticate_user! 
-    end
-  end
-
   def set_instance_variables
-    unless public_site?
-      current_school
-      current_yearbook
-    end
+    current_school
+    current_yearbook
   end
 
   def public_site?
-    request.subdomain == 'www'
+    ['www'].include? request.subdomain
   end
 
   def find_school

@@ -13,11 +13,16 @@ class Yearbook < ActiveRecord::Base
   validates :starting_year, :ending_year, :numericality => true
   validates :starting_year, :ending_year, :numericality => { :greater_than => 2010, :less_than => 2025 }
 
+  def to_params
+    [starting_year, ending_year].join('-')
+  end
+
   def current!
     remove_all_current_flags
     self.reload.update_attribute(:current, true)
   end
 
+  private
   def make_first_yearbook_current
     self.current = true if school_yearbooks.empty?
   end

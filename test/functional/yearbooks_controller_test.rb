@@ -6,6 +6,20 @@ class YearbooksControllerTest < FunctionalTest
     @yearbook = FactoryGirl.create(:yearbook)
   end
 
+  test "should redirect user, if not logged in" do
+    sign_out @current_user
+    #request.host = 'aai.test.com'
+    get :index
+    assert_redirected_to :new_user_session
+  end
+
+  test "should redirect user, if not logged in" do
+    sign_out @current_user
+    #request.host = 'aai.test.com'
+    get :show, :id => "1"
+    assert_redirected_to :new_user_session
+  end
+
   test "should get index" do
     get :index
     assert_response :success
@@ -26,7 +40,7 @@ class YearbooksControllerTest < FunctionalTest
   end
 
   test "should show yearbook" do
-    get :show, id: @yearbook
+    get :show, id: @yearbook.id
     assert_response :success
   end
 
