@@ -30,6 +30,14 @@ class IntegrationTest < ActionDispatch::IntegrationTest
     @current_user = FactoryGirl.create(factory)
     login_as(@current_user, :scope => :user)
   end
+
+  def sign_out_user
+    logout(@current_user)
+  end
+
+  def teardown
+    Warden.test_reset!
+  end
 end
 
 class FunctionalTest < ActionController::TestCase
