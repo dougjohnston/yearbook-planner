@@ -26,7 +26,7 @@ class IntegrationTest < ActionDispatch::IntegrationTest
   Warden.test_mode!
 
   def sign_in_user(factory=:complete_user, subdomain='aai')
-    @host = "http://#{subdomain}.test.com"
+    @host = "http://#{subdomain}.example.com"
     @current_user = FactoryGirl.create(factory)
     login_as(@current_user, :scope => :user)
   end
@@ -44,7 +44,7 @@ class FunctionalTest < ActionController::TestCase
   include Devise::TestHelpers
 
   def sign_in_user(factory=:complete_user, subdomain='aai')
-    request.host = "#{subdomain}.test.com"
+    request.host = "#{subdomain}.example.com"
     @current_user = FactoryGirl.create(factory)
     sign_in @current_user
   end

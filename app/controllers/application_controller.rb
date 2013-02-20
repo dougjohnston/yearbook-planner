@@ -3,7 +3,7 @@ class ApplicationController < ActionController::Base
 
   layout :layout_by_resource
 
-  before_filter :redirect_public_site
+  #before_filter :redirect_public_site
   before_filter :authenticate_user!, :unless => :public_site?
   before_filter :set_instance_variables, :unless => :public_site?
 
@@ -32,9 +32,9 @@ class ApplicationController < ActionController::Base
     current_yearbook
   end
 
-  def redirect_public_site
-    redirect_to(:public_url) if public_site?
-  end
+  #def redirect_public_site
+    #redirect_to(root_url) if public_site?
+  #end
 
   def public_site?
     ['www',''].include? request.subdomain

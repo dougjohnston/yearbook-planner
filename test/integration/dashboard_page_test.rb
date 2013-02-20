@@ -8,7 +8,8 @@ class DashboardPageTest < IntegrationTest
   end
 
   test "when not logged in, " do
+    FactoryGirl.create(:school)
     visit "http://aai.test.com/"
-    assert page.has_xpath?("//title", :text => "AAI Login - yearbookplanner.com")
+    assert page.has_xpath?("//title", "AAI Login - yearbookplanner.com")
   end
 end

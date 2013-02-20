@@ -1,8 +1,13 @@
 require "minitest_helper"
 
 class PublicRouteTest < IntegrationTest
-  test "public homepage" do
-    assert_equal 'www', host.split('.')[0]
+  test "routes to public index with www" do
+    host = 'www.example.com'
+    assert_routing "/", :controller => "public", :action => "index"
+  end
+
+  test "routes to public index with no subdomain" do
+    host = 'example.com'
     assert_routing "/", :controller => "public", :action => "index"
   end
 end
