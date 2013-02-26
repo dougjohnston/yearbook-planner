@@ -39,41 +39,45 @@ header {
 
 section#main {
   padding-left: 0;
-  nav#nav-ladder {
-    border: 1px solid $light-gray;
-    ul {
-      list-style: none;
-      li.ladder-header {
-        clear: left;
-        color: $dark-gray;
-        text-transform: uppercase;
+
+  #main-content {
+    border-left: 1px solid $light-gray;
+    padding-left: 10px;
+  }
+
+  ul.ladder {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li.ladder-section-header {
+      padding-top: 5px;
+      font-size: 14px;
+      color: $dark-gray;
+      text-transform: uppercase;
+    }
+    li.ladder-row {
+      margin-left: 15px;
+      padding: 2px 5px;
+      .ladder-page-numbers {
+        display: inline-block;
+        width: 5%;
+        font-weight: bold;
       }
-      li.ladder-row {
-        clear: left;
-        font-size: 12px;
-        .ladder-node {
-          float: left;
-          margin-bottom: 2px;
-        }
-        .left-page, .right-page {
-          width: 40%;
-        }
-        .left-page-number, .right-page-number {
-          width: 5%;
-          color: $two;
-          text-align: center;
-        }
-        .left-page {
-          text-align: right;
-          padding-right: 5px;
-        }
-        .right-page {
-          text-align: left;
-          padding-left: 5px;
-        }
+      .ladder-spread-titles {
+        display: inline-block;
+        width: 20%;
       }
     }
   }
+}
+
+li.row-odd {
+  background-color: $light-gray;
+}
+
+li.row-even {
+  background-color: #f5f5f5;
 }
 
 footer {

@@ -20,13 +20,13 @@
   </header>
   <section id="main" class="container-fluid">
     <div class="row-fluid">
-      <nav class="span2" id="nav-ladder">
+      <nav class="span2" id="nav-sidebar">
         <%= render 'layouts/application/sidebar' %>
       </nav>
-      <div class="span10">
+      <section class="span10" id="main-content">
         <%= render 'shared/notices' %>
         <%= yield %>
-      </div>
+      </section>
     <div>
   </section>
   <footer>
