@@ -14,6 +14,7 @@ class YearbooksController < ApplicationController
   # GET /yearbooks/1.json
   def show
     @yearbook = current_yearbook
+    @sections = current_yearbook.sections.includes(:spreads => [:left_page, :right_page])
 
     respond_to do |format|
       format.html # show.html.erb
