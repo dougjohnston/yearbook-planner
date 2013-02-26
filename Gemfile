@@ -31,6 +31,7 @@ group :development do
   gem 'better_errors' # prettier and more functional error pages
   gem 'binding_of_caller' # support for better_errors
   gem 'quiet_assets' # stop the torrent of asset log entries
+  gem 'meta_request' # enable the Chrome Rails Panel
 end
 
 # FOR DEVELOPMENT AND TEST

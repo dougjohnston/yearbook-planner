@@ -103,6 +103,9 @@ GEM
       i18n (>= 0.4.0)
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
+    meta_request (0.2.2)
+      rack-contrib
+      railties
     metaclass (0.0.1)
     method_source (0.8.1)
     mime-types (1.21)
@@ -139,6 +142,8 @@ GEM
     quiet_assets (1.0.2)
       railties (>= 3.1, < 5.0)
     rack (1.5.2)
+    rack-contrib (1.1.0)
+      rack (>= 0.9.1)
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.0.0.beta1)
@@ -229,6 +234,7 @@ DEPENDENCIES
   guard-minitest
   jasmine
   jquery-rails
+  meta_request
   minitest-growl
   minitest-rails
   minitest-rails-capybara
