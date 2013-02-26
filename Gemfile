@@ -1,14 +1,11 @@
 source 'https://rubygems.org'
 
 # Framework
-gem 'rails'#, '3.2.11'
+gem 'rails', '~> 4.0.0.beta'
 gem 'mysql2'
 
-# Not needed after an upgrade to Rails 4.x
-gem 'strong_parameters'
-
 # Authentication & Authorization
-gem 'devise'
+gem 'devise', git: "https://github.com/plataformatec/devise.git", branch: "rails4"
 #gem 'cancan'
 
 # Models
@@ -22,10 +19,10 @@ gem 'active_link_to'
 
 # FOR ASSETS
 group :assets do
-  gem 'sass-rails',   '~> 3.2.3'
-  gem 'coffee-rails', '~> 3.2.1'
+  gem 'sass-rails', '~> 4.0.0.beta'
+  gem 'coffee-rails', '~> 4.0.0.beta'
   gem 'therubyracer', :platforms => :ruby
-  gem 'uglifier', '>= 1.0.3'
+  gem 'uglifier'
 end
 
 # FOR DEVELOPMENT

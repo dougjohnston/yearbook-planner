@@ -8,7 +8,7 @@ class YearbookValidationTest < UnitTest
 
   # school
   test "requires a school" do
-    refute FactoryGirl.build(:yearbook, :school => false).valid?
+    refute FactoryGirl.build(:yearbook, :school => nil).valid?
   end
 
   # starting_year

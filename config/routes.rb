@@ -26,7 +26,7 @@ YearbookPlanner::Application.routes.draw do
 
   # Match subdomains and redirect to the dashboard
   constraints(Subdomain) do
-    match '/' => 'dashboard#show'
+    get '/' => 'dashboard#show'
   end
 
   root :to => 'public#index'

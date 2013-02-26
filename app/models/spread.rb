@@ -1,5 +1,4 @@
 class Spread < ActiveRecord::Base
-  include ActiveModel::ForbiddenAttributesProtection
   include RankedModel
   include Assignable
 
