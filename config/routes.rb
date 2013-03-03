@@ -1,4 +1,6 @@
 YearbookPlanner::Application.routes.draw do
+  mount JasmineRails::Engine => "/specs" unless Rails.env.production?
+
   devise_for :users
 
   resources :schools

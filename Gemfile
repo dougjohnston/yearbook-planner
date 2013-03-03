@@ -25,6 +25,12 @@ group :assets do
   gem 'uglifier'
 end
 
+# FOR DEVELOPMENT AND TEST
+group :development, :test do
+  gem 'minitest-rails'
+  gem 'jasmine-rails'
+end
+
 # FOR DEVELOPMENT
 group :development do
   gem 'puma' # faster dev server
@@ -32,12 +38,6 @@ group :development do
   gem 'binding_of_caller' # support for better_errors
   gem 'quiet_assets' # stop the torrent of asset log entries
   gem 'meta_request' # enable the Chrome Rails Panel
-end
-
-# FOR DEVELOPMENT AND TEST
-group :development, :test do
-  gem 'minitest-rails'
-  gem 'jasmine'
 end
 
 # FOR TESTING
