@@ -74,6 +74,7 @@ ActiveRecord::Schema.define(version: 20121217011100) do
     t.integer  "yearbook_id"
     t.integer  "deadline_id"
     t.string   "title"
+    t.string   "color"
     t.integer  "pages"
     t.integer  "section_order"
     t.datetime "created_at"

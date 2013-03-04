@@ -21,19 +21,26 @@ School.all.each do |school|
     Deadline.create!(yearbook: yb, title: "Second Deadline", description: "Our second deadline", due_date: Time.now + 50.days)
 
     # Create a few sections
-    titles = %w(Elementary Seniors Athletics Academics Events)
+    titles = %w(Elementary Secondary Seniors Ministries Athletics Academics Events)
+    blank_page = true
     titles.shuffle.each_with_index do |title, i|
-      section = Section.create!(yearbook: yb, title: title, section_order: i+1)
+      color = "%06x" % (rand * 0xffffff)
+      section = Section.create!(yearbook: yb, title: title, section_order: i+1, color: color)
       section.assign_to(User.order('rand()').first)
 
       # Create some spreads
-      6.times do |j|
-        user = school.users.order('rand()').first
+      (rand(15) + 2).times do |j|
+        users = school.users.order('rand()')
+        user1 = users.first
+        user2 = users.last
         deadline = yb.deadlines.order('rand()').first
-        spread = Spread.create!(section: section, deadline: deadline, title: "#{title} Spread ##{i+j}", spread_order: i+j)
-        spread.left_page.update_attribute(:title, "#{title} Test Page ##{i+j}")
-        spread.right_page.update_attribute(:title, "#{title} Test Page ##{i+j+1}")
-        spread.assign_to(user)
+        spread = Spread.create!(section: section, deadline: deadline, title: "#{title} Spread ##{j+1}", spread_order: i+j)
+        spread.left_page.update_attribute(:title, nil) if blank_page
+        #spread.left_page.update_attribute(:title, "#{title} Test Page ##{i+j}")
+        #spread.right_page.update_attribute(:title, "#{title} Test Page ##{i+j+1}")
+        spread.assign_to(user1)
+        spread.assign_to(user2) if rand(3) == 1
+        blank_page = false
       end
     end
   end

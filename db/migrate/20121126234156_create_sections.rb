@@ -4,6 +4,7 @@ class CreateSections < ActiveRecord::Migration
       t.references :yearbook
       t.references :deadline
       t.string :title
+      t.string :color
       t.integer :pages
       t.integer :section_order
 

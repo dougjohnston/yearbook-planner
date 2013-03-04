@@ -3,6 +3,7 @@
   // YB.sections = new YB.Collection.Sections(<%= @sections.to_json.html_safe %>) 
 
   var yearbook_view = new YB.Views.Yearbook({ el: $("#ladder-title") });
+  <%#$(".ladder").nested({minWidth: 100, gutter: 5});%>
 <% end %>
 
 <% content_for :templates do %>
@@ -16,22 +17,27 @@
 <ul class="ladder">
   <% page_number = 0 %>
   <% @sections.each do |section| %>
-    <li class="ladder-section-header"><%= section.title %></li>
+    <%#<li class="box size31 ladder-section-header"><%= section.title </li>%>
     <% section.spreads.each do |spread| %>
-      <li class="ladder-row row-<%= cycle('odd','even') %>">
-        <span class="ladder-page-numbers">
-          <span class="ladder-move">
-            +
+      <li class="ladder-row">
+        <div class="ladder-spread-divider"></div>
+        <% unless spread.left_page.blank? %>
+          <div class="ladder-spread-section section-color-left" style="background-color: #<%= section.color %>"></div>
+          <div class="ladder-page-numbers ladder-page-left"><%= page_number += 1 %></div>
+        <% end %>
+        <div class="ladder-spread-section section-color-right" style="background-color: #<%= section.color %>"></div>
+        <div class="ladder-page-numbers ladder-page-right"><%= page_number += 1 %></div>
+        <div class="ladder-spread-titles">
+          <%= link_to spread.title, "#" %><br />
+          <span class="ladder-spread-links">
+            <%= spread.users.first.full_name %>
+            <%= "(+#{spread.users.count - 1})" if spread.users.count > 1 %>
+            <br />
+            <%= time_ago_in_words(spread.updated_at) %> ago
           </span>
-          <%= page_number += 1 %> - <%= page_number += 1 %>
-        </span>
-        <span class="ladder-spread-titles">
-          <%= link_to spread.title, "#" %>
-        </span>
-        <span class="ladder-spread-actions">
-          <small><%= link_to "view details", "#" %></small>
-        </span>
+        </div>
       </li>
+      <li class="ladder-add"></li>
     <% end %>
   <% end %>
 </ul>
