@@ -32,14 +32,6 @@
   <footer>
     <%= render 'layouts/application/footer' %>
   </footer>
-
-  <%= yield :javascript %>
-  <% if content_for?(:jquery) %>
-    <script type="text/javascript">
-      $(function() {
-        <%= yield :jquery %>
-      });
-    </script>
-  <% end %>
+  <%= render 'layouts/application/js_content' %>
 </body>
 </html>

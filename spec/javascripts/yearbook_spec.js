@@ -8,6 +8,7 @@ describe("YB.Model.Yearbook", function() {
 
     it("should have default attributes", function() {
       expect(yearbook.url).toEqual("/yearbooks");
+      expect(yearbook.title).toEqual("");
     });
   });
 });

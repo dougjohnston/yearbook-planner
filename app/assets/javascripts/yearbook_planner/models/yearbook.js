@@ -1,5 +1,6 @@
 YB.Models.Yearbook = Backbone.Model.extend({
-  url: '/yearbooks'
+  url: '/yearbooks',
+  title: ''
 });
 
 YB.Collections.Yearbooks = Backbone.Collection.extend({

@@ -1,4 +1,17 @@
-<h3><%= current_yearbook.starting_year %> - <%= current_yearbook.ending_year %> Ladder</h3>
+<% content_for :javascript do %>
+  // YB.yearbook = new YB.Model.Yearbook(<%= current_yearbook.to_json.html_safe %>) 
+  // YB.sections = new YB.Collection.Sections(<%= @sections.to_json.html_safe %>) 
+
+  var yearbook_view = new YB.Views.Yearbook({ el: $("#ladder-title") });
+<% end %>
+
+<% content_for :templates do %>
+  <script type="text/template" id="ladder-title-template">
+    <%= current_yearbook.starting_year %> - <%= current_yearbook.ending_year %> Ladder
+  </script>
+<% end %>
+
+<h3 id="ladder-title"></h3>
 
 <ul class="ladder">
   <% page_number = 0 %>
