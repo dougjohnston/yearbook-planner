@@ -19,17 +19,17 @@
   <% @sections.each do |section| %>
     <%#<li class="box size31 ladder-section-header"><%= section.title </li>%>
     <% section.spreads.each do |spread| %>
-      <li class="ladder-row">
-        <div class="ladder-spread-divider"></div>
+      <li class="ladder-node">
+        <div class="ladder-node-divider"></div>
         <% unless spread.left_page.blank? %>
-          <div class="ladder-spread-section section-color-left" style="background-color: #<%= section.color %>"></div>
-          <div class="ladder-page-numbers ladder-page-left"><%= page_number += 1 %></div>
+          <div class="ladder-node-color ladder-node-color-left" style="background-color: #<%= section.color %>"></div>
+          <div class="ladder-node-page ladder-node-page-left"><%= page_number += 1 %></div>
         <% end %>
-        <div class="ladder-spread-section section-color-right" style="background-color: #<%= section.color %>"></div>
-        <div class="ladder-page-numbers ladder-page-right"><%= page_number += 1 %></div>
-        <div class="ladder-spread-titles">
+        <div class="ladder-node-color ladder-node-color-right" style="background-color: #<%= section.color %>"></div>
+        <div class="ladder-node-page ladder-node-page-right"><%= page_number += 1 %></div>
+        <div class="ladder-node-title">
           <%= link_to spread.title, "#" %><br />
-          <span class="ladder-spread-links">
+          <span class="ladder-node-links">
             <%= spread.users.first.full_name %>
             <%= "(+#{spread.users.count - 1})" if spread.users.count > 1 %>
             <br />
@@ -37,7 +37,7 @@
           </span>
         </div>
       </li>
-      <li class="ladder-add"></li>
+      <li class="ladder-add-node"></li>
     <% end %>
   <% end %>
 </ul>
