@@ -1,3 +1,17 @@
+<nav id="nav-utility">
+  <%= current_user.full_name %> |
+  <%= link_to "profile", edit_user_path(current_user.id) %> |
+  <%= link_to "help", static_path(:page => :help) %> |
+  <%= link_to "sign out", destroy_user_session_path, :method => :delete  %>
+</nav>
+<h1>
+  <%= current_school.short_name %> Yearbook Planner
+  
+  <%= form_tag do %>
+    <small><%= current_yearbook.title %> <%= link_to "change", "#" %></small>
+    <%#= collection_select(:yearbook, :id, current_school.yearbooks.all, :id, :title) %>
+  <% end %>
+</h1>
 <nav id="nav-main">
   <ul class='nav clearfix'>
     <%= active_link_to "Dashboard", dashboard_path, :wrap_tag => :li %>

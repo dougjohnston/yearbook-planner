@@ -1,10 +1,16 @@
 require 'minitest_helper'
 
 class YearbookMethodTest < UnitTest
-  # to_params
-  test "returns a pretty to_params" do
+  # years
+  test "returns a the yearbook years" do
     yearbook = FactoryGirl.build(:yearbook, :starting_year => 2013, :ending_year => 2014)
-    assert_equal '2013-2014', yearbook.to_params
+    assert_equal '2013-2014', yearbook.years
+  end
+
+  # title
+  test "returns a nice title" do
+    yearbook = FactoryGirl.build(:yearbook, :starting_year => 2013, :ending_year => 2014, :theme => "Survivors")
+    assert_equal '2013-2014 &ndash; Survivors', yearbook.title
   end
   
   # current!

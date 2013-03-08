@@ -11,8 +11,12 @@ class Yearbook < ActiveRecord::Base
   validates :starting_year, :ending_year, :numericality => true
   validates :starting_year, :ending_year, :numericality => { :greater_than => 2010, :less_than => 2025 }
 
-  def to_params
+  def years
     [starting_year, ending_year].join('-')
+  end
+
+  def title
+    "#{years} &ndash; #{theme}".html_safe
   end
 
   def current!

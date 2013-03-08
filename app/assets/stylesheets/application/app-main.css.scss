@@ -4,20 +4,30 @@
 header {
   padding: 3px 20px;
   background-color: $one;
+  border-bottom: 2px solid #69c;
   color: $white;
   h1 {
+    display: inline;
     margin: 0;
     font-size: 23px;
+    line-height: 40px;
+    form {
+      font-size: 12px;
+      display: inline;
+      select {
+        background-color: #369;
+      }
+    }
   }
   nav#nav-main {
     ul.nav {
       list-style: none;
-      margin: 0 0 0 0px;
+      margin: 0 0 4px 0;
       li {
         float: left;
         a {
           display: block;
-          padding: 0 10px;
+          padding: 0 20px 0 0;
           color: $white;
           text-transform: uppercase;
         }
@@ -39,6 +49,10 @@ header {
 
 section#main {
   padding-left: 0;
+
+  #nav-sidebar {
+    padding-left: 20px;
+  }
 
   #main-content {
     border-left: 1px solid $light-gray;
